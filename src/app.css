@@ -5,6 +5,7 @@
 body {
 	background-color: #000000;
 	color: #ffffff;
+	font-family: monospace;
 }
 
 /* Set the scrollbar width and color */

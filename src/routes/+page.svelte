@@ -11,40 +11,52 @@
 	import Softtech from './lib/components/softtech/Softtech.svelte';
 	import Creative from './lib/components/creative/Creative.svelte';
 
+	import { activeLargeComponent, activeSmallComponent } from './lib/stores';
+
 	let mobius: HTMLDivElement;
 
 	let nameBtn: HTMLButtonElement;
 
 	let selectedCategory: string;
-
+	let aboutSelected = false;
 	const categories = [
-		{ name: 'Hardtech', component: HardTech },
-		{ name: 'Softtech', component: Softtech },
+		{ name: 'Hard tech', component: HardTech },
+		{ name: 'Soft tech', component: Softtech },
 		{ name: 'Creative Work', component: Creative }
 	];
 
-	let activeLargeComponent: any = null;
-	let activeSmallComponent: any = null;
 	let largeDiv: HTMLDivElement;
 	let smallDiv: HTMLDivElement;
 
 	const setActiveLargeComponent = (component: any) => {
-		if (activeLargeComponent) {
-			activeLargeComponent = null;
+		activeLargeComponent.set(null);
+		if (component == null) {
+			aboutSelected = false;
+			activeLargeComponent.set(null);
+			return;
 		}
-		activeLargeComponent = component;
+
+		// if in mobile view, set the active small component to null
+		if (window.innerWidth < 768) {
+			console.log('mobile view');
+			if (activeSmallComponent) {
+				activeSmallComponent.set(null);
+			}
+		}
+
+		activeLargeComponent.set(component);
 	};
 
 	const setActiveSmallComponent = (component: any) => {
 		if (component == null) {
-			activeSmallComponent = null;
+			activeSmallComponent.set(null);
 			selectedCategory = '';
 			return;
 		}
 		if (activeSmallComponent) {
-			activeSmallComponent = null;
+			activeSmallComponent.set(null);
 		}
-		activeSmallComponent = component;
+		activeSmallComponent.set(component);
 	};
 
 	onMount(() => {
@@ -129,32 +141,48 @@
 
 <div bind:this={mobius} class="absolute mx-auto my-auto overflow-hidden top-0 -z-10" />
 
-<div class="w-screen px-4 md:px-0 md:max-w-[80%] mx-auto py-10 h-screen overflow-x-hidden">
-	<div class="md:grid-cols-2 md:grid flex-col flex md:gap-16 h-full">
+<div class="w-screen px-4 lg:px-0 lg:max-w-[80%] mx-auto py-10 h-screen overflow-x-hidden">
+	<div class="lg:grid-cols-2 lg:grid flex-col flex lg:gap-16 h-full">
 		<div class="col-span-1 col-start-1">
 			<div class="space-y-4 mt-[15%]">
 				<button
 					bind:this={nameBtn}
 					on:click={() => {
-						setActiveLargeComponent(AboutMe);
 						setActiveSmallComponent(null);
+						if (aboutSelected) {
+							aboutSelected = false;
+							setActiveLargeComponent(null);
+							return;
+						}
+						aboutSelected = true;
+						setActiveLargeComponent(AboutMe);
 					}}
 				>
-					<h1 class="text-5xl font-medium transition-all text-gray-300 hover:text-white">
+					<h1
+						class="text-5xl font-medium transition-all ease-in-out hover:text-white {aboutSelected
+							? 'text-white'
+							: 'text-gray-300'}"
+					>
 						Forrest Meng
 					</h1>
 				</button>
 				<div class="pt-4">
 					<ul
-						class="flex flex-wrap text-center dark:text-gray-400 gap-x-12 text-2xl md:text-4xl font-extralight"
+						class="flex flex-wrap text-center dark:text-gray-400 gap-x-12 text-2xl lg:text-4xl font-extralight"
 					>
 						{#each categories as category}
-							<li class="hover:text-white transition-all">
+							<li class="hover:text-white transition-all ease-in-out">
 								<button
 									class:selected={selectedCategory === category.name}
 									on:click={() => {
-										setActiveSmallComponent(category.component);
 										setActiveLargeComponent(null);
+										// if it is already selected, then deselect it
+										if (selectedCategory === category.name) {
+											setActiveSmallComponent(null);
+											selectedCategory = '';
+											return;
+										}
+										setActiveSmallComponent(category.component);
 										selectedCategory = category.name;
 									}}
 								>
@@ -165,27 +193,30 @@
 					</ul>
 				</div>
 			</div>
-			{#if activeSmallComponent}
+			{#if $activeSmallComponent}
 				<div
-					class="w-full  bg-black bg-opacity-30 border-[1px] border-primary rounded-3xl h-[32rem] mt-8"
+					class="w-full  bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-[32rem] mt-8 backdrop-blur-sm"
 					bind:this={smallDiv}
 				>
 					<div class="h-full w-full p-8 ">
 						<div class="overflow-auto flex h-full w-full">
-							<svelte:component this={activeSmallComponent} />
+							<svelte:component this={$activeSmallComponent} />
 						</div>
 					</div>
 				</div>
 			{/if}
 		</div>
-		{#if activeLargeComponent}
-			<div class="col-span-1 col-start-2 min-h-[80%]" bind:this={largeDiv}>
+		{#if $activeLargeComponent}
+			<div
+				class="col-span-1 col-start-2 h-[60%] lg:min-h-full mt-8 lg:mt-0 backdrop-blur-sm"
+				bind:this={largeDiv}
+			>
 				<div
-					class="w-full bg-black bg-opacity-30 border-[1px] border-primary rounded-3xl h-full my-auto"
+					class="w-full bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-full my-auto"
 				>
 					<div class="h-full w-full p-8 my-auto">
 						<div class="overflow-auto flex h-full w-full">
-							<svelte:component this={activeLargeComponent} />
+							<svelte:component this={$activeLargeComponent} />
 						</div>
 					</div>
 				</div>
@@ -193,8 +224,8 @@
 		{/if}
 	</div>
 </div>
-<div class="absolute bottom-10 left-[5%] md:left-[10%] space-x-4">
-	<div class="flex space-x-4 text-gray-300 transition-all">
+<div class="absolute bottom-10 left-[5%] lg:left-[10%] space-x-4">
+	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out">
 		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a
 		>
@@ -203,6 +234,9 @@
 		>
 		<a href="https://twitter.com/m_forrest" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:twitter" class="w-10 h-10 hover:text-white" /></a
+		>
+		<a href="mailto:forrestm.a113@gmail.com" target="_blank" rel="noreferrer"
+			><Icon icon="mdi:email" class="w-10 h-10 hover:text-white" /></a
 		>
 	</div>
 </div>
