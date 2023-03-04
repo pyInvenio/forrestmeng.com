@@ -5,9 +5,47 @@
 	import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
 	import { ParametricGeometries } from 'three/examples/jsm/geometries/ParametricGeometries.js';
 	import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry.js';
+
+	import AboutMe from './lib/components/about/AboutMe.svelte';
+	import HardTech from './lib/components/hardtech/HardTech.svelte';
+	import Softtech from './lib/components/softtech/Softtech.svelte';
+	import Creative from './lib/components/creative/Creative.svelte';
+
 	let mobius: HTMLDivElement;
 
-    // for 
+	let nameBtn: HTMLButtonElement;
+
+	let selectedCategory: string;
+
+	const categories = [
+		{ name: 'Hardtech', component: HardTech },
+		{ name: 'Softtech', component: Softtech },
+		{ name: 'Creative Work', component: Creative }
+	];
+
+	let activeLargeComponent: any = null;
+	let activeSmallComponent: any = null;
+	let largeDiv: HTMLDivElement;
+	let smallDiv: HTMLDivElement;
+
+	const setActiveLargeComponent = (component: any) => {
+		if (activeLargeComponent) {
+			activeLargeComponent = null;
+		}
+		activeLargeComponent = component;
+	};
+
+	const setActiveSmallComponent = (component: any) => {
+		if (component == null) {
+			activeSmallComponent = null;
+			selectedCategory = '';
+			return;
+		}
+		if (activeSmallComponent) {
+			activeSmallComponent = null;
+		}
+		activeSmallComponent = component;
+	};
 
 	onMount(() => {
 		const onWindowResize = () => {
@@ -89,18 +127,88 @@
 	});
 </script>
 
-<div bind:this={mobius} class="absolute mx-auto my-auto overflow-hidden top-0" />
+<div bind:this={mobius} class="absolute mx-auto my-auto overflow-hidden top-0 -z-10" />
 
-<div class="max-w-[80%] mx-auto my-10">
-	<div class="space-y-4 my-[15%]">
-		<h1 class="text-5xl font-medium ">Forrest Meng</h1>
-		<h1 class="text-5xl font-extralight opacity-75">Engineer. Developer. Illustrator.</h1>
-	</div>
-
-	<!-- div that is at bottom left corner, not absolute -->
-	<div class="flex flex-col items-start">
-		<div class="flex flex-row space-x-4">
-			
+<div class="w-screen px-4 md:px-0 md:max-w-[80%] mx-auto py-10 h-screen overflow-x-hidden">
+	<div class="md:grid-cols-2 md:grid flex-col flex md:gap-16 h-full">
+		<div class="col-span-1 col-start-1">
+			<div class="space-y-4 mt-[15%]">
+				<button
+					bind:this={nameBtn}
+					on:click={() => {
+						setActiveLargeComponent(AboutMe);
+						setActiveSmallComponent(null);
+					}}
+				>
+					<h1 class="text-5xl font-medium transition-all text-gray-300 hover:text-white">
+						Forrest Meng
+					</h1>
+				</button>
+				<div class="pt-4">
+					<ul
+						class="flex flex-wrap text-center dark:text-gray-400 gap-x-12 text-2xl md:text-4xl font-extralight"
+					>
+						{#each categories as category}
+							<li class="hover:text-white transition-all">
+								<button
+									class:selected={selectedCategory === category.name}
+									on:click={() => {
+										setActiveSmallComponent(category.component);
+										setActiveLargeComponent(null);
+										selectedCategory = category.name;
+									}}
+								>
+									{category.name}
+								</button>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
+			{#if activeSmallComponent}
+				<div
+					class="w-full  bg-black bg-opacity-30 border-[1px] border-primary rounded-3xl h-[32rem] mt-8"
+					bind:this={smallDiv}
+				>
+					<div class="h-full w-full p-8 ">
+						<div class="overflow-auto flex h-full w-full">
+							<svelte:component this={activeSmallComponent} />
+						</div>
+					</div>
+				</div>
+			{/if}
 		</div>
+		{#if activeLargeComponent}
+			<div class="col-span-1 col-start-2 min-h-[80%]" bind:this={largeDiv}>
+				<div
+					class="w-full bg-black bg-opacity-30 border-[1px] border-primary rounded-3xl h-full my-auto"
+				>
+					<div class="h-full w-full p-8 my-auto">
+						<div class="overflow-auto flex h-full w-full">
+							<svelte:component this={activeLargeComponent} />
+						</div>
+					</div>
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>
+<div class="absolute bottom-10 left-[5%] md:left-[10%] space-x-4">
+	<div class="flex space-x-4 text-gray-300 transition-all">
+		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
+			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a
+		>
+		<a href="https://www.linkedin.com/in/forrestmeng629/" target="_blank" rel="noreferrer"
+			><Icon icon="mdi:linkedin" class="w-10 h-10 hover:text-white" /></a
+		>
+		<a href="https://twitter.com/m_forrest" target="_blank" rel="noreferrer"
+			><Icon icon="mdi:twitter" class="w-10 h-10 hover:text-white" /></a
+		>
+	</div>
+</div>
+
+<style>
+	button.selected {
+		color: white;
+	}
+</style>
