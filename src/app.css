@@ -7,6 +7,9 @@ body {
 	color: #ffffff;
 	font-family: monospace;
 }
+html {
+	background-color: #000000;
+}
 img {
 	/* round */
 	border-radius: 0.5rem;

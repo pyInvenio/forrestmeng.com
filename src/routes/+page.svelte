@@ -212,7 +212,7 @@
 					class="w-full  bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-[30rem] mt-8 backdrop-blur-sm"
 					bind:this={smallDiv}
 				>
-					<div class="h-full w-full p-8 ">
+					<div class="h-full w-full  md:p-8 p-2 ">
 						<div class="overflow-auto flex h-full w-full">
 							<svelte:component this={$activeSmallComponent} />
 						</div>
@@ -228,7 +228,7 @@
 				<div
 					class="w-full bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-full my-auto"
 				>
-					<div class="h-full w-full p-8 my-auto">
+					<div class="h-full w-full md:p-8 p-2 my-auto">
 						<div class="overflow-auto flex h-full w-full">
 							<svelte:component this={$activeLargeComponent} />
 						</div>
