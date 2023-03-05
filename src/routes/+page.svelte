@@ -227,7 +227,7 @@
 					
 				</div>
 			{/if}
-			<div class="align-bottom mt-8 md:mt-16">
+			<div class="align-bottom mt-0 md:mt-16">
 				<Footer />
 			</div>
 		</div>
