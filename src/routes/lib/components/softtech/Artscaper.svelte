@@ -17,7 +17,7 @@
 		<h1 class="text-2xl mt-2">Demo Video:</h1>
 
 		<iframe
-			src="https://www.youtube.com/embed/uv2CwtUOvuw"
+			src="https://drive.google.com/file/d/1LWZ6FZTsg94_CE_uHvmx9MlMpIEQPJ2R/preview"
 			frameborder="0"
 			allowfullscreen
 			title="Artscaper"
@@ -39,7 +39,7 @@
 			<br />
 			Artscaper is a tool that solves these problems, allowing artists to search for reference images
 			quickly and efficiently through AI query generation and latent space searching, and share and collaborate
-			on reference boards with other artists. I'm currently in the Startup Hokies Incubator, hoping
+			on reference boards with other artists. I'm currently in the Startup Hokies Incubator, aiming
             to grow Artscaper into the best place for artists to save and share references.
 		</p>
 	</div>

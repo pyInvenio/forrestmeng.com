@@ -31,12 +31,12 @@
 		},
 		{
 			name: 'Coin Detection: Coding Edge Detection and Hough Transform from Scratch',
-			component: QuizzAr,
+			component: CoinDetection,
 			style: 'text-sky-300'
 		},
 		{
 			name: 'QuizzAR: Fun financial literacy through interactive Unity quizzes (1st place Education Track @ HackDuke)',
-			component: Taldera,
+			component: QuizzAr,
 			style: 'text-purple-300'
 		},
 		{

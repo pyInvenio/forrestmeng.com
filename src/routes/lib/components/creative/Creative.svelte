@@ -12,6 +12,11 @@
             style: 'text-red-500',
             component: null
         },
+        {
+            name: 'Mural',
+            style: 'text-red-500',
+            component: null
+        },
     ]
 
     const photos = [
@@ -44,7 +49,7 @@
 </script>
 
 <div class="w-full h-full text-lg">
-	<h1 class="text-xl">Illustrations</h1>
+	<h1 class="text-xl">Illustrations (Coming Soon)</h1>
 	<!-- button -->
 	<div class="mt-2 flex-col flex">
 		{#each illus as illustration}
@@ -57,7 +62,7 @@
 		{/each}
 	</div>
     <br>
-    <h1 class="text-xl">Photography</h1>
+    <h1 class="text-xl">Photography (Coming Soon)</h1>
 	<!-- button -->
 	<div class="mt-2 flex-col flex">
 		{#each photos as photo}

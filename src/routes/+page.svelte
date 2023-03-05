@@ -209,7 +209,7 @@
 			</div>
 			{#if $activeSmallComponent}
 				<div
-					class="w-full  bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-[32rem] mt-8 backdrop-blur-sm"
+					class="w-full  bg-black bg-opacity-20 border-[1px] border-primary rounded-3xl h-[30rem] mt-8 backdrop-blur-sm"
 					bind:this={smallDiv}
 				>
 					<div class="h-full w-full p-8 ">
@@ -222,7 +222,7 @@
 		</div>
 		{#if $activeLargeComponent}
 			<div
-				class="col-span-1 col-start-2 h-[60%] lg:min-h-full mt-8 lg:mt-0 backdrop-blur-sm"
+				class="col-span-1 col-start-2 h-[55%] lg:min-h-full mt-8 lg:mt-0 backdrop-blur-sm"
 				bind:this={largeDiv}
 			>
 				<div
@@ -249,9 +249,17 @@
 		<a href="https://twitter.com/m_forrest" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:twitter" class="w-10 h-10 hover:text-white" /></a
 		>
+		<a
+			href="https://devpost.com/forrestm113?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+			target="_blank"
+			rel="noreferrer"
+		>
+			<Icon icon="simple-icons:devpost" class="w-10 h-10 hover:text-white" />
+		</a>
 		<a href="mailto:forrestm.a113@gmail.com" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:email" class="w-10 h-10 hover:text-white" /></a
 		>
+		
 	</div>
 </div>
 
