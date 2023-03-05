@@ -16,6 +16,9 @@ p {
 	padding-right: 1rem;
 	font-size: 1rem;
 }
+a:hover{
+	text-decoration: underline;
+}
 
 /* Set the scrollbar width and color */
 ::-webkit-scrollbar {

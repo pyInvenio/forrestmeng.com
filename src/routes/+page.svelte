@@ -238,7 +238,7 @@
 		{/if}
 	</div>
 </div>
-<div class="absolute bottom-10 left-[5%] lg:left-[10%] space-x-4">
+<div class="absolute bottom-0 md:bottom-10 left-[5%] lg:left-[10%] space-x-4">
 	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out">
 		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a
