@@ -220,16 +220,7 @@
 						</div>
 					</div>
 				</div>
-				{:else}
-				<div
-					class="w-full  bg-black bg-opacity-0 h-[30rem] mt-8"
-				>
-					
-				</div>
 			{/if}
-			<div class="align-bottom mt-0 md:mt-16">
-				<Footer />
-			</div>
 		</div>
 		{#if $activeLargeComponent}
 			<div
@@ -249,11 +240,10 @@
 		{/if}
 		
 	</div>
-	
 </div>
 
-<!-- <div class="absolute bottom-0 md:bottom-10 left-[5%] lg:left-[10%] space-x-4">
-	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out">
+<div class="absolute bottom-0 left-[5%] lg:left-[10%] space-x-4">
+	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out pb-8">
 		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a
 		>
@@ -275,7 +265,7 @@
 		>
 		
 	</div>
-</div> -->
+</div>
 <style>
 	button.selected {
 		color: white;
