@@ -6,10 +6,9 @@ body {
 	background-color: #000000;
 	color: #ffffff;
 	font-family: monospace;
+	overflow: auto;
 }
-html {
-	background-color: #000000;
-}
+
 img {
 	/* round */
 	border-radius: 0.5rem;
