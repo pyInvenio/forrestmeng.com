@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { activeLargeComponent, activeSmallComponent } from '../../stores';
+	import { activeLargeComponent, activeSmallComponent, largeComponentActive } from '../../stores';
 
     const illus = [
         {
@@ -30,13 +30,15 @@
 	const setActiveLarge = (component: any) => {
 		if (activeLargeComponent) {
 			activeLargeComponent.set(null);
+            largeComponentActive.set(false);
 		}
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 1000) {
 			console.log('mobile view');
 			if (activeSmallComponent) {
 				activeSmallComponent.set(null);
 			}
 		}
+        largeComponentActive.set(true);
 		activeLargeComponent.set(component);
 	};
 </script>

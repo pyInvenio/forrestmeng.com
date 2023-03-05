@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { activeLargeComponent, activeSmallComponent } from '../../stores';
+	import { activeLargeComponent, activeSmallComponent, largeComponentActive } from '../../stores';
 
 	import Artscaper from './Artscaper.svelte';
 	import Smartdollars from './Smartdollars.svelte';
@@ -10,12 +10,12 @@
 	import QuizzAr from './QuizzAR.svelte';
 	const projects = [
 		{
-			name: 'Artscaper: Web-based AI powered image reference search and curation engine for artists',
+			name: 'Artscaper (WIP): Web-based AI powered image reference search and curation engine for artists',
 			component: Artscaper,
 			style: 'text-violet-300'
 		},
 		{
-			name: 'SmartDollars AI: GPT powered financial literacy aid',
+			name: 'SmartDollars AI (WIP): GPT powered financial literacy aid',
 			component: Smartdollars,
 			style: 'text-blue-300'
 		},
@@ -49,13 +49,15 @@
 	const setActiveLarge = (component: any) => {
 		if (activeLargeComponent) {
 			activeLargeComponent.set(null);
+			largeComponentActive.set(false);
 		}
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 1000) {
 			console.log('mobile view');
 			if (activeSmallComponent) {
 				activeSmallComponent.set(null);
 			}
 		}
+		largeComponentActive.set(true);
 		activeLargeComponent.set(component);
 	};
 </script>

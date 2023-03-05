@@ -11,7 +11,7 @@
 	import Softtech from './lib/components/softtech/Softtech.svelte';
 	import Creative from './lib/components/creative/Creative.svelte';
 
-	import { activeLargeComponent, activeSmallComponent } from './lib/stores';
+	import { activeLargeComponent, activeSmallComponent, largeComponentActive } from './lib/stores';
 
 	let mobius: HTMLDivElement;
 
@@ -33,11 +33,13 @@
 		if (component == null) {
 			aboutSelected = false;
 			activeLargeComponent.set(null);
+			largeComponentActive.set(false);
 			return;
 		}
 
 		// if in mobile view, set the active small component to null
-		if (window.innerWidth < 768) {
+
+		if (window.innerWidth < 1000) {
 			console.log('mobile view');
 			if (activeSmallComponent) {
 				activeSmallComponent.set(null);
@@ -45,6 +47,7 @@
 		}
 
 		activeLargeComponent.set(component);
+		largeComponentActive.set(true);
 	};
 
 	const setActiveSmallComponent = (component: any) => {
@@ -72,6 +75,17 @@
 			} else {
 				camera.position.z = 5;
 				camera.position.x = -2;
+			}
+			if (window.innerWidth < 1000) {
+				let $largeActive = false;
+				largeComponentActive.subscribe((value) => {
+					$largeActive = value;
+				});
+				console.log('mobile view');
+				if ($largeActive) {
+					activeSmallComponent.set(null);
+					selectedCategory = '';
+				}
 			}
 		};
 		const scene = new THREE.Scene();

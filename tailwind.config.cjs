@@ -9,5 +9,7 @@ module.exports = {
       primary: '#8C98FF',
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

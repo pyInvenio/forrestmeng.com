@@ -7,11 +7,11 @@
 	import SpO2 from './SpO2.svelte';
 	import HapticGlove from './HapticGlove.svelte';
 	import BadApple from './BadApple.svelte';
-	import { activeLargeComponent, activeSmallComponent } from '../../stores';
+	import { activeLargeComponent, activeSmallComponent, largeComponentActive } from '../../stores';
 
 	const projects = [
 		{
-			name: 'Latis: Securing Industrial IoT OTA updates through decentralization',
+			name: 'Latis (WIP): Securing Industrial IoT OTA updates through decentralization',
 			component: Latis,
 			style: 'text-violet-300'
 		},
@@ -61,13 +61,15 @@
 	const setActiveLarge = (component: any) => {
 		if (activeLargeComponent) {
 			activeLargeComponent.set(null);
+			largeComponentActive.set(false);
 		}
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 1000) {
 			console.log('mobile view');
 			if (activeSmallComponent) {
 				activeSmallComponent.set(null);
 			}
 		}
+		largeComponentActive.set(true);
 		activeLargeComponent.set(component);
 	};
 </script>
