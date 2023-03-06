@@ -4,8 +4,8 @@
 		<h1 class="text-xl mt-2">Factually Correct GPT powered Financial Literacy Aid</h1>
 	</div>
 	<h1>
-		<a href="" target="_blank" rel="noreferrer" class="font-medium text-2xl text-primary"
-			>Link coming soon!</a
+		<a href="https://smart-dollars-ai.vercel.app/" target="_blank" rel="noreferrer" class="font-medium text-2xl text-primary"
+			>Try it out!</a
 		>
 	</h1>
 
