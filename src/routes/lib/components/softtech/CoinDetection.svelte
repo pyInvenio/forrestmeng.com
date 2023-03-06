@@ -34,8 +34,8 @@
 			an image:
 		</p>
 		<div class="flex mx-auto">
-			<img src="softtech/shippicture.jpg" alt="" class="p-2 h-fit w-1/2" />
-			<img src="softtech/cannyedge.png" alt="" class="p-2 w-1/2 h-fit" />
+			<img src="softtech/shippicture.jpg" alt="" class="p-2 object-contain w-1/2" />
+			<img src="softtech/cannyedge.png" alt="" class="p-2 w-1/2 object-contain" />
 		</div>
 		<p>
 			<br />
@@ -46,8 +46,8 @@
 			an example of the circles I detected in red:
 		</p>
 		<div class="flex mx-auto">
-			<img src="softtech/cannyedgecoins.png" alt="" class="p-2 h-fit w-1/2" />
-			<img src="softtech/cannyedgecoinsoutline.png" alt="" class="p-2 w-1/2 h-fit" />
+			<img src="softtech/cannyedgecoins.png" alt="" class="p-2 object-contain w-1/2" />
+			<img src="softtech/cannyedgecoinsoutline.png" alt="" class="p-2 w-1/2 object-contain" />
 		</div>
 		<p>
 			Finally, by using a varying heuristic as well as the RGB value of the centroid pixel, I could

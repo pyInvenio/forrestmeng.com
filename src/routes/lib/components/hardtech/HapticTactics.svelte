@@ -35,15 +35,15 @@
 	<div class="my-2 space-y-2">
 		<h1 class="text-xl">The Drill</h1>
 		<div class="flex mx-auto">
-			<img src="hardtech/hapticdrillcad.jpg" alt="" class="p-2 h-fit w-2/5" />
-			<img src="hardtech/hapticdrill.jpg" alt="" class="p-2 w-1/2 h-fit" />
+			<img src="hardtech/hapticdrillcad.jpg" alt="" class="p-2 object-contain w-2/5" />
+			<img src="hardtech/hapticdrill.jpg" alt="" class="p-2 w-1/2" />
 		</div>
 		<p>
 			The drill proxy was modeled in SolidWorks and printed in PLA. We used a rack and pinion to
 			transform the rotational torque provided by the BLDC into linear force feedback. The handle of
 			the drill is hollow, allowing us to insert our PCB boards, wires, and vibromotor.
 		</p>
-		<img src="hardtech/hapticutaway.jpg" class="h-fit md:w-2/3 w-full mx-auto" alt="" />
+		<img src="hardtech/hapticutaway.jpg" class="object-contain md:w-2/3 w-full mx-auto" alt="" />
 		<p>
 			A Teensy 4.0 microcontroller was used as a middleman between the host computer and the other
 			motor controllers. It received commands from the host computer through UART and relayed the
@@ -54,12 +54,12 @@
 			resistance which represented different drilling materials. We also attached two fans to the
 			drill to provide cooling for the BLDC. Below is an image of the drill circuit during testing.
 		</p>
-		<img src="hardtech/hapticcircuit.jpg" class="h-fit md:w-2/3 w-full mx-auto" alt="" />
+		<img src="hardtech/hapticcircuit.jpg" class="object-contain md:w-2/3 w-full mx-auto" alt="" />
 	</div>
 	<div class="my-2 space-y-2">
 		<h1 class="text-xl">VR Simulation</h1>
 
-		<img src="hardtech/hapticdemo1.jpg" alt="" class="h-fit md:w-2/3 w-full mx-auto" />
+		<img src="hardtech/hapticdemo1.jpg" alt="" class="object-contain md:w-2/3 w-full mx-auto" />
 		<p>
 			Above, you can see our VR demo in action at the CHCI symposium (where we won second place). To
 			simulate the drilling process, we used Unity and the SteamVR plugin. We used the HTC Vive
@@ -74,12 +74,12 @@
 			(material) the user was drilling. Audio feedback was also provided to the user to simulate the
 			drilling sound. Below is a picture of my development on the Unity environment.
 		</p>
-		<img src="hardtech/hapticunityscreen.jpg" alt="" class="h-fit md:w-2/3 w-full mx-auto" />
+		<img src="hardtech/hapticunityscreen.jpg" alt="" class="object-contain md:w-2/3 w-full mx-auto" />
 	</div>
 	<div class="my-2 space-y-2">
 		<h1 class="text-xl">Results</h1>
 
-		<img src="hardtech/hapticdemo2.png" alt="" class="h-fit md:w-2/3 w-full mx-auto" />
+		<img src="hardtech/hapticdemo2.png" alt="" class="object-contain md:w-2/3 w-full mx-auto" />
 		<p>
 			My team finished the project and presented it at the VT CHCI symposium, where we won second
 			place while being the only underclassmen team. We also presented to the Chief Strategy Officer
@@ -87,8 +87,8 @@
 			testing, we had an 80% success in drilling sensation satisfaction with haptic illusion.
 		</p>
 		<div class="flex flex-col md:flex-row mx-auto space-y-2 md:space-y-0">
-			<img src="hardtech/hapticmarkallen.JPG" alt="" class="h-fit md:w-5/12 w-full mx-auto" />
-			<img src="hardtech/haptickarlweiss.JPG" alt="" class="h-fit md:w-5/12 w-full mx-auto" />
+			<img src="hardtech/hapticmarkallen.JPG" alt="" class="object-contain md:w-5/12 w-full mx-auto" />
+			<img src="hardtech/haptickarlweiss.JPG" alt="" class="object-contain md:w-5/12 w-full mx-auto" />
 		</div>
 	</div>
 </div>
