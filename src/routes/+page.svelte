@@ -116,7 +116,6 @@
 			1,
 			0.4
 		);
-
 		// create a material for the Möbius strip
 		const material = new THREE.MeshPhongMaterial({
 			color: 0xffffff,
@@ -125,20 +124,27 @@
 			flatShading: true
 		});
 
-		if (window.innerWidth < 768) {
-			camera.position.z = 10;
-			camera.position.x = -1;
-		} else {
-			camera.position.z = 5;
-			camera.position.x = -2;
-		}
-
 		// create a mesh from the Möbius strip geometry and material
 		const mobiusStrip = new THREE.Mesh(geometry, material);
 		// rotate the mesh so that the strip is visible
-		mobiusStrip.rotation.x = Math.PI / 2 + 0.1;
-		// tilt the mesh so that the strip is visible
+		
 		mobiusStrip.rotation.y = 0.4;
+
+		if (window.innerWidth < 768) {
+			camera.position.z = 10;
+			camera.position.x = -1;
+			
+			mobiusStrip.rotation.x = Math.PI / 2 + 0.2;
+		} else {
+			camera.position.z = 5;
+			camera.position.x = -2;
+			
+			mobiusStrip.rotation.x = Math.PI / 2 + 0.1;
+		}
+
+		
+		// tilt the mesh so that the strip is visible
+		
 
 		// add the mesh to the scene
 		scene.add(mobiusStrip);
@@ -242,7 +248,7 @@
 	</div>
 </div>
 
-<div class="absolute bottom-0 left-[5%] lg:left-[10%] space-x-4">
+<div class="sm:absolute bottom-0 left-[5%] lg:left-[10%] space-x-4">
 	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out pb-8">
 		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a
