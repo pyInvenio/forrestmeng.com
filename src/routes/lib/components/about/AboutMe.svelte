@@ -21,7 +21,7 @@
 				<li>Incoming SWE Intern @ Roblox</li>
                 <li>Calhoun Scholar @ VT Honors College</li>
 				<li>Undergraduate Research Assistant @ COLLAB</li>
-				<li>Publicity Chair @ Student Engineers’ Council</li>
+				<li>Director of Operations @ Student Engineers’ Council</li>
 				<li>Exec. Board @ Blockchain at VT</li>
 				<li>Secretary @ Art Club at VT</li>
 			</ul>
