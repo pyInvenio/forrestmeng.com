@@ -248,7 +248,7 @@
 	</div>
 </div>
 
-<div class="sm:absolute bottom-0 left-[5%] lg:left-[10%] space-x-4">
+<div class="absolute bottom-0 left-[5%] lg:left-[10%] space-x-4">
 	<div class="flex space-x-4 text-gray-300 transition-all ease-in-out pb-8">
 		<a href="https://github.com/pyInvenio" target="_blank" rel="noreferrer"
 			><Icon icon="mdi:github" class="w-10 h-10 hover:text-white" /></a

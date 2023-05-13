@@ -7,11 +7,17 @@
 	import SpO2 from './SpO2.svelte';
 	import HapticGlove from './HapticGlove.svelte';
 	import BadApple from './BadApple.svelte';
+	import NeRfThis from './NeRFThis.svelte';
 	import { activeLargeComponent, activeSmallComponent, largeComponentActive } from '../../stores';
 
 	const projects = [
 		{
-			name: 'Latis (WIP): Securing Industrial IoT OTA updates through decentralization',
+			name: 'NeRF This! - Diffusion-based Visual Accumulation',
+			component: NeRfThis,
+			style: 'text-fuchsia-300'
+		},
+		{
+			name: 'Latis: Securing Industrial IoT OTA updates through decentralization',
 			component: Latis,
 			style: 'text-violet-300'
 		},

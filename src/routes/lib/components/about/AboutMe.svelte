@@ -18,7 +18,7 @@
 		<div class="md:col-span-2 mt-4">
 			<h1 class="text-2xl">Currently</h1>
 			<ul class="space-y-1 mt-4">
-				<li>Incoming SWE Intern @ Roblox</li>
+				<li>SWE Intern @ Roblox</li>
                 <li>Calhoun Scholar @ VT Honors College</li>
 				<li>Undergraduate Research Assistant @ COLLAB</li>
 				<li>Director of Operations @ Student Engineers’ Council</li>
