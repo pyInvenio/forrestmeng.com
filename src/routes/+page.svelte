@@ -166,7 +166,7 @@
 <div class="w-screen px-4 lg:px-0 lg:max-w-[80%] mx-auto py-10 md:h-screen h-[90%] overflow-x-hidden">
 	<div class="lg:grid-cols-2 lg:grid flex-col flex lg:gap-16 h-full">
 		<div class="col-span-1 col-start-1">
-			<div class="space-y-4 mt-[15%]">
+			<div class="space-y-4 md:mt-[15%] mt-[5%]">
 				<button
 					bind:this={nameBtn}
 					on:click={() => {
