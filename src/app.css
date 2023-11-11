@@ -5,9 +5,22 @@
 body {
 	background-color: #000000;
 	color: #ffffff;
-	font-family: monospace;
 	overflow: auto;
 }
+
+h1 {
+	font-family: 'Newsreader', serif;
+}
+
+h3 {
+	font-family: 'Neuton', serif;
+}
+
+p {
+	font-family: 'Red Hat Text', sans-serif;
+}
+
+
 
 img {
 	/* round */
@@ -31,24 +44,24 @@ a:hover{
 
 /* Set the thumb color and make it rounded */
 ::-webkit-scrollbar-thumb {
-	background-color: #5e67b5;
+	background-color: #000000;
 	border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #8C98FF;
+    background-color: #292929;
     transition: all 0.2s ease-in-out;
 }
 /* Set the track color */
 ::-webkit-scrollbar-track {
-	background-color: #0e0424;
+	background-color: #d4d4d4;
 }
 
 /* For Firefox */
 * {
 	scrollbar-width: thin;
-	scrollbar-color: #8C98FF #0e0424;
+	scrollbar-color: #000000 #d4d4d4;
 }
 
 *::-webkit-scrollbar-corner {
-	background-color: #0e0424;
+	background-color: #000000;
 }
