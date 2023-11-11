@@ -173,7 +173,7 @@
 			{/each}
 		</div>
 		<button
-			class="mx-auto px-4 border-[#696969] text-[#696969] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-lg text-center "
+			class="mx-auto px-4 border-[#696969] text-[#696969] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
 			on:click={highlightAll}>s o l v e</button
 		>
 	</div>
