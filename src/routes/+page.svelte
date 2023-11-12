@@ -173,7 +173,7 @@
 			{/each}
 		</div>
 		<button
-			class="mx-auto mt-4 px-4 border-[#444444] text-[#444444] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
+			class="mx-auto mt-4 px-4 border-[#696969] text-[#696969] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
 			on:click={highlightAll}>s o l v e</button
 		>
 	</div>
@@ -201,7 +201,7 @@
 		justify-content: center;
 		cursor: pointer;
 		font-family: 'Newsreader', serif;
-		color: #444444;
+		color: #555555;
 	}
 
 	.highlighted {
