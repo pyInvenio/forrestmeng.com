@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.crosswordMain {
 	background-color: #000000;
 	color: #ffffff;
+	overflow: auto;
+}
+
+body {
+	background-color: #ffffff;
+	color: #000000;
 	overflow: auto;
 }
 

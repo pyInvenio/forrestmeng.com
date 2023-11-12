@@ -124,22 +124,22 @@
 	function handleClick(rowIndex: number, colIndex: number) {
 		console.log(gridOfWords[rowIndex][colIndex]);
 		if (gridOfWords[rowIndex][colIndex] === 'ABOUTME') {
-			window.location.href = '/aboutme';
+			window.location.href = '/pages/aboutme';
 		}
 		if (gridOfWords[rowIndex][colIndex] === 'WORK') {
-			window.location.href = '/work';
+			window.location.href = '/pages/work';
 		}
 		if (gridOfWords[rowIndex][colIndex] === 'PROJECTS') {
-			window.location.href = '/projects';
+			window.location.href = '/pages/projects';
 		}
 		if (gridOfWords[rowIndex][colIndex] === 'CREATIONS') {
-			window.location.href = '/creations';
+			window.location.href = '/pages/creations';
 		}
 		if (gridOfWords[rowIndex][colIndex] === 'BLOG') {
-			window.location.href = '/blog';
+			window.location.href = '/pages/blog';
 		}
 		if (gridOfWords[rowIndex][colIndex] === 'CONTACT') {
-			window.location.href = '/contact';
+			window.location.href = '/pages/contact';
 		}
 	}
 
@@ -148,7 +148,7 @@
 	}
 </script>
 
-<div class="h-screen max-h-screen flex justify-center items-center overflow-y-hidden">
+<div class="h-screen max-h-screen flex justify-center items-center overflow-y-hidden crosswordMain">
 	<div class=" mx-auto my-auto flex flex-col">
 		<div class="word-finder">
 			{#each grid as row, rowIndex}
@@ -173,7 +173,7 @@
 			{/each}
 		</div>
 		<button
-			class="mx-auto px-4 border-[#696969] text-[#696969] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
+			class="mx-auto mt-4 px-4 border-[#444444] text-[#444444] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
 			on:click={highlightAll}>s o l v e</button
 		>
 	</div>
@@ -201,7 +201,7 @@
 		justify-content: center;
 		cursor: pointer;
 		font-family: 'Newsreader', serif;
-		color: #696969;
+		color: #444444;
 	}
 
 	.highlighted {
