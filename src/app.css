@@ -9,7 +9,7 @@
 }
 
 body {
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	color: #000000;
 	overflow: auto;
 }
@@ -34,7 +34,6 @@ img {
 }
 p {
 	text-align: justify;
-	padding-right: 1rem;
 	font-size: 1rem;
 }
 a:hover{
