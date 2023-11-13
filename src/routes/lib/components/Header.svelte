@@ -10,7 +10,7 @@
 </script>
 
 <svelte:window on:resize={closeMenu} />
-<nav class="w-full justify-between flex flex-row text-2xl lg:px-16 px-8 py-4 z-10">
+<nav class="w-full justify-between flex flex-row text-2xl lg:px-16 px-8 py-4 z-30">
 	<h1>Forrest Meng</h1>
 	<div class="hidden lg:flex flex-row gap-x-4">
 		<p><a href="/pages/aboutme">About Me</a></p>
