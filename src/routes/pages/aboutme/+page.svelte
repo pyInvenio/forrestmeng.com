@@ -10,7 +10,7 @@
 					Currently studying Machine Learning and Controls, Robotics, and Autonomy at Virginia Tech.
 				</p>
 				<p class="text-xl">
-					Been really interested recently in signals, seantic communication, and fintech
+					Been really interested recently in signals, semantic communication, and fintech
 					applications.
 				</p>
 				<p class="text-xl">Working on all things in emerging tech, startups, and art.</p>
