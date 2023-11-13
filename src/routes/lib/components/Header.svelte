@@ -46,7 +46,7 @@
 	</div>
 </nav>
 <div
-	class=" fixed top-0 z-10 mt-8 w-full overflow-hidden lg:hidden {(!showMenu &&
+	class=" fixed top-0 z-20 mt-16 w-full overflow-hidden lg:hidden {(!showMenu &&
 		'pointer-events-none') ||
 		''}"
 >
