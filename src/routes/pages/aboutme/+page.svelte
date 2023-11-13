@@ -62,7 +62,7 @@
 						</p>
 					</li>
 					<li class="border-b-[1px] text-lg py-4">Neo Scholar Finalist</li>
-					<li class="border-b-[1px] text-lg py-4">Contractor @ Tholos</li>
+					<li class="border-b-[1px] text-lg py-4">Full Stack Contractor @ Tholos</li>
 					<li class="border-b-[1px] text-lg py-4">Undergraduate Research Assistant @ COLLAB</li>
 					<li class="border-b-[1px] text-lg py-4">
 						SWE Intern @ SCOUT Inc.
@@ -113,6 +113,15 @@
 				</div>
 			</div>
 		</div>
+		<div class=" lg:mt-16 mt-8 opacity-50 hover:opacity-100 transition-all">
+			<a href="/pages/things_i_found"
+				>Here's a bunch of rabbit holes and random things I found neat</a
+			>
+		</div>
 	</div>
-	<img src="/geometry.png" alt="" class="absolute -top-64 xl:right-64 right-0 -z-10 xl:w-1/4 w-1/2" />
+	<img
+		src="/geometry.png"
+		alt=""
+		class="absolute -top-64 xl:right-64 right-0 -z-10 xl:w-1/4 w-1/2"
+	/>
 </div>

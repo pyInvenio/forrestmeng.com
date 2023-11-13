@@ -1,10 +1,10 @@
 <script></script>
 
 <div
-	class="bg-black text-white justify-between  lg:px-16 px-8 p-8 flex sm:flex-row flex-col items-center"
+	class="bg-black text-white justify-between  lg:px-16 px-8 p-8 flex sm:flex-row flex-col items-center text-lg"
 >
 	<div class="text-center sm:text-left">
-		<h1>If any of this interests you, please reach out :)</h1>
+		<h1>If any of this interests you, feel free to reach out :)</h1>
 		<h3>© 2023</h3>
 	</div>
 	<div class="flex flex-col text-center sm:text-right sm:pt-0 pt-4">
