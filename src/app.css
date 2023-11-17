@@ -30,7 +30,7 @@ p {
 
 img {
 	/* round */
-	border-radius: 0.5rem;
+	/* border-radius: 0.5rem; */
 }
 p {
 	text-align: justify;
@@ -58,7 +58,8 @@ a:hover{
 }
 /* Set the track color */
 ::-webkit-scrollbar-track {
-	background-color: #d4d4d4;
+	background-color: #f5f5f5;
+	width: 1px;
 }
 
 /* For Firefox */

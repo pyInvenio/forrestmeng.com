@@ -1,3 +1,7 @@
+<script>
+	import Icon from '@iconify/svelte';
+</script>
+
 <div class="relative">
 	<div
 		class="relative mx-auto flex w-[min(86rem,95%)] flex-col items-center justify-center my-8 z-10"
@@ -114,8 +118,10 @@
 			</div>
 		</div>
 		<div class=" lg:mt-16 mt-8 opacity-50 hover:opacity-100 transition-all">
-			<a href="/pages/things_i_found"
-				>Here's a bunch of rabbit holes and random things I found neat</a
+			<a href="/pages/things_i_found" class=" flex flex-row align-baseline"
+				>Here's a bunch of rabbit holes and random things I found neat <Icon
+					icon="carbon:arrow-up-right" class=""
+				/></a
 			>
 		</div>
 	</div>
