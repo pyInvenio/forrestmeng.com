@@ -118,7 +118,7 @@
 			</div>
 		</div>
 		<div class=" lg:mt-16 mt-8 opacity-50 hover:opacity-100 transition-all">
-			<a href="/pages/things_i_found" class=" flex flex-row align-baseline"
+			<a href="/pages/things_i_found" class=" flex flex-row align-baseline text-center"
 				>Here's a bunch of rabbit holes and random things I found neat <Icon
 					icon="carbon:arrow-up-right" class=""
 				/></a

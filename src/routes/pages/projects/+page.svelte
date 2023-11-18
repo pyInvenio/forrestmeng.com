@@ -51,7 +51,8 @@
 			tags: ['Software'],
 			summary: 'A place for the internet to post anonymous notes',
 			thumbnail: '',
-			link: '/pages/projects/internetnotes',
+			link: 'https://internetnotes.vercel.app/',
+			target:"_blank",
 			date: 'June 2023'
 		},
 		'NeRF This': {
@@ -68,6 +69,13 @@
 			link: '/pages/projects/artscaper',
 			date: 'Dec 2022'
 		},
+		'SpO2 Sensor': {
+			tags: ['Hardware'],
+			summary: 'Building a heart rate and SpO2 monitor from scratch.',
+			thumbnail: '',
+			link: '/pages/projects/spo2',
+			date: 'Jan 2023'
+		},
 		'Latis Network': {
 			tags: ['Software', 'Hardware'],
 			summary: 'Using decentralized ledger technology to secure and validate OTA IIoT updates',
@@ -75,75 +83,68 @@
 			link: '/pages/projects/latis',
 			date: 'Dec 2022'
 		},
-		'SpO2 Sensor': {
-			tags: ['Hardware'],
-			summary: '',
-			thumbnail: '',
-			link: '',
-			date: ''
-		},
-		FeelReal: {
-			tags: ['Software', 'AI/ML', 'Augmentation', 'Hackathon'],
-			summary: '',
-			thumbnail: '',
-			link: '',
-			date: ''
-		},
-		COLLAB: {
+		'Research @ COLLAB': {
 			tags: ['Software', 'Hardware', 'AI/ML', 'Augmentation'],
 			summary: '',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: 'Aug 2022'
+		},
+		FeelReal: {
+			tags: ['Software', 'AI/ML', 'Augmentation', 'Hackathon'],
+			summary: 'BeReal but for your emotional state in VR',
+			thumbnail: '',
+			link: '',
+			date: 'Jan 2023'
 		},
 		TALDERA: {
 			tags: ['Software', 'AI/ML', 'Hackathon'],
-			summary: '',
+			summary: 'Using the Cohere Generate API to summarize Discord chats',
 			thumbnail: '',
 			link: '',
-			date: ''
-		},
-		'Haptic Tactics': {
-			tags: ['Software', 'Hardware', 'Augmentation'],
-			summary: '',
-			thumbnail: '',
-			link: '',
-			date: ''
+			date: 'Nov 2022'
 		},
 		'Haptic Glove': {
 			tags: ['Hardware', 'Augmentation'],
-			summary: '',
+			summary: 'Built my own DIY haptic glove for SteamVR',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: 'July 2022'
 		},
-		'Lowerbody Exoskeleton': {
+		'Haptic Tactics': {
 			tags: ['Software', 'Hardware', 'Augmentation'],
-			summary: '',
+			summary: 'Using VR and a haptic proxy to improve drilling in aerospace manufacturing.',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: 'Feb 2022'
+		},
+		'Lowerbody Exoskeleton @ ARL': {
+			tags: ['Software', 'Hardware', 'Augmentation'],
+			summary: 'Predicting ',
+			thumbnail: '',
+			link: '',
+			date: 'Sept 2021'
 		},
 		QuizzAR: {
 			tags: ['Software', 'Augmentation', 'Hackathon'],
 			summary: '',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: 'Oct 2021'
 		},
 		'Coin Detection & Cubes': {
-			tags: ['Software', 'AI/ML'],
-			summary: '',
+			tags: ['Software', 'AI/ML', 'Graphics'],
+			summary: 'Some cool fundamental CV and graphics things',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: '2021'
 		},
 		COVILA: {
 			tags: ['Software', 'Hardware', 'AI/ML'],
-			summary: '',
+			summary: 'Human-tracking autonomous ball launcher',
 			thumbnail: '',
 			link: '',
-			date: ''
+			date: '2021'
 		}
 	};
 
@@ -172,9 +173,14 @@
 			if (window.innerWidth < 768) {
 				camera.position.z = 10;
 				camera.position.x = -1;
+				camera.position.y = -2;
+
+				mobiusStrip.rotation.x = Math.PI / 2 + 0.4;
 			} else {
-				camera.position.z = 5;
-				camera.position.x = -2;
+				camera.position.z = 10;
+				camera.position.x = -4;
+				camera.position.y = -2;
+				mobiusStrip.rotation.x = Math.PI / 2 + 0.4;
 			}
 		};
 		const scene = new THREE.Scene();
@@ -220,12 +226,14 @@
 		if (window.innerWidth < 768) {
 			camera.position.z = 10;
 			camera.position.x = -1;
+			camera.position.y = -2;
 
-			mobiusStrip.rotation.x = Math.PI / 2 + 0.2;
+			mobiusStrip.rotation.x = Math.PI / 2 + 0.4;
 		} else {
-			camera.position.z = 5;
-			camera.position.x = -2;
-			mobiusStrip.rotation.x = Math.PI / 2 + 0.1;
+			camera.position.z = 10;
+			camera.position.x = -4;
+			camera.position.y = -2;
+			mobiusStrip.rotation.x = Math.PI / 2 + 0.4;
 		}
 
 		// tilt the mesh so that the strip is visible
@@ -238,7 +246,7 @@
 		const animate = () => {
 			requestAnimationFrame(animate);
 			effect.render(scene, camera);
-			mobiusStrip.rotation.z -= 0.001;
+			mobiusStrip.rotation.z -= 0.005;
 		};
 		animate();
 		window.addEventListener('resize', onWindowResize, false);
