@@ -3,7 +3,7 @@
 		<div class="flex flex-col w-full lg:mr-0 mx-8 md:mt-0 mt-8">
 			<h1 class="text-6xl mb-4">Work</h1>
 			<div class="py-4 border-b-[1px] w-full">
-				<h1 class="text-3xl">Susquehanna International group</h1>
+				<h1 class="text-3xl">Susquehanna International Group</h1>
 				<h1 class="italic text-xl">(Incoming SWE Intern, Summer 2024)</h1>
 				<p>Will be on the MDCAD team.</p>
 			</div>
