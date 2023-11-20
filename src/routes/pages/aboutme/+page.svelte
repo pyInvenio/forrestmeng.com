@@ -80,18 +80,16 @@
 				</ul>
 			</div>
 		</div>
-		<div class="w-full flex flex-col md:flex-row justify-between items-top">
+		<div class="w-full flex flex-col lg:flex-row justify-between items-top">
 			<div class="w-full flex flex-col items-top lg:mt-16 mt-8">
 				<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">My reading list:</h1></div>
 				<div class="flex flex-col lg:ml-0 mx-8 lg:max-w-1/2">
-					<ul>
-						<li class="text-lg">Beyond Infinite by Michael Lewis [current]</li>
-						<li class="text-lg">Maybe You Should Talk to Someone by Lori Gottlieb [current]</li>
-						<li class="text-lg">Three Body Problem by Liu Cixin</li>
-						<li class="text-lg">Flash Boys by Michael Lewis</li>
-						<li class="text-lg">Snow Crash by Neal Stephenson</li>
-						<li class="text-lg">Neuromancer by William Gibson</li>
-					</ul>
+					<li class="text-lg">Beyond Infinite by Michael Lewis [current]</li>
+					<li class="text-lg">Maybe You Should Talk to Someone by Lori Gottlieb [current]</li>
+					<li class="text-lg">Three Body Problem by Liu Cixin</li>
+					<li class="text-lg">Flash Boys by Michael Lewis</li>
+					<li class="text-lg">Snow Crash by Neal Stephenson</li>
+					<li class="text-lg">Neuromancer by William Gibson</li>
 				</div>
 			</div>
 			<div class="w-full flex flex-col items-top lg:mt-16 mt-8">
@@ -116,11 +114,54 @@
 					</ul>
 				</div>
 			</div>
+			<div class="w-full flex flex-col items-top lg:mt-16 mt-8">
+				<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">Albums you should listen to:</h1></div>
+				<div class="flex flex-col lg:ml-0 mx-8 lg:max-w-1/2">
+					<ul>
+						<li class="text-lg">
+							<a
+								href="https://open.spotify.com/album/1MYKQYpHeS8cTr8vxSfqSE?si=ZPiYYbobRAKAVa9bcyHUKw"
+								target="_blank"
+								rel="noreferrer">城市小說選集 by Sweet John</a
+							>
+						</li>
+						<li class="text-lg">
+							<a
+								href="https://open.spotify.com/album/4nNZ5UJCzhlfJbip0SDLI1?si=n2mknFO6SCmOEorDDSYgSQ"
+								target="_blank"
+								rel="noreferrer">Portraits by Maribou State</a
+							>
+						</li>
+						<li class="text-lg">
+							<a
+								href="https://open.spotify.com/album/5Cq8LjM4wG9tQdo8ynIC5g?si=aWHUniTgSte8RqDFpKzNlQ"
+								target="_blank"
+								rel="noreferrer">How to start a garden by Nanna</a
+							>
+						</li>
+						<li class="text-lg">
+							<a
+								href="https://open.spotify.com/album/6TPMkWwD9IfpKnPc3rQrGS?si=950GtTEvRF6ABJP69fIhGA"
+								target="_blank"
+								rel="noreferrer">Tasmanian Glow by Strawberry Girls</a
+							>
+						</li>
+						<li class="text-lg">
+							<a
+								href="https://open.spotify.com/album/2mZUejhzFxhZu2Zd5XV3kX?si=DYoHCFQnTgetgp5zYKGiRQ"
+								target="_blank"
+								rel="noreferrer">Nonadaptation 비적응 by SE SO NEON</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<div class=" lg:mt-16 mt-8 opacity-50 hover:opacity-100 transition-all">
 			<a href="/pages/things_i_found" class=" flex flex-row align-baseline text-center"
 				>Here's a bunch of rabbit holes and random things I found neat <Icon
-					icon="carbon:arrow-up-right" class=""
+					icon="carbon:arrow-up-right"
+					class=""
 				/></a
 			>
 		</div>
