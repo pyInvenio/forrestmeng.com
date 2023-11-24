@@ -33,7 +33,7 @@
 				still a lot of noise in the image, so I then used non-max suppression to remove the noise. Finally,
 				I used hysteresis to remove the weak edges. Here is an example of my Canny Edge Detection output
 				given an image:
-				<div class="flex mx-auto">
+				<div class="flex mx-auto flex-col md:flex-row">
 					<img src="/softtech/shippicture.jpg" alt="" class="p-2 object-contain" />
 					<img src="/softtech/cannyedge.png" alt="" class="p-2 object-contain" />
 				</div>
@@ -43,7 +43,7 @@
 				circles, I could detect which pixels represent the centroids of the circles, since they would
 				have the highest intensity of overlap. I could then draw the circles on the image and detect
 				the coins. Here is an example of the circles I detected in red:
-				<div class="flex mx-auto">
+				<div class="flex mx-auto flex-col md:flex-row">
 					<img src="/softtech/cannyedgecoins.png" alt="" class="p-2 object-contain" />
 					<img src="/softtech/cannyedgecoinsoutline.png" alt="" class="p-2 object-contain" />
 				</div>
