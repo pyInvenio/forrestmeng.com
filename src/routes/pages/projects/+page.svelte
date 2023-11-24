@@ -50,7 +50,7 @@
 		'Internet Notes': {
 			tags: ['Software'],
 			summary: 'A place for the internet to post anonymous notes',
-			thumbnail: '',
+			thumbnail: '/softtech/internetnotes.png',
 			link: 'https://internetnotes.vercel.app/',
 			target:"_blank",
 			date: 'June 2023'
@@ -58,21 +58,21 @@
 		'NeRF This': {
 			tags: ['Software', 'Graphics', 'AI/ML'],
 			summary: 'Using Stable Diffusion to improve visual accumulation in NeRFs',
-			thumbnail: '/hardtech/progression.png',
+			thumbnail: '/hardtech/progression_50.png',
 			link: '/pages/projects/nerfthis',
 			date: 'March 2023'
 		},
 		Artscaper: {
 			tags: ['Software', 'AI/ML'],
 			summary: 'A better image reference search and collaboration tool for visual artists',
-			thumbnail: '/softtech/artscapersearch.png',
+			thumbnail: '/softtech/artscapersearch_50.png',
 			link: '/pages/projects/artscaper',
 			date: 'Dec 2022'
 		},
 		'SpO2 Sensor': {
 			tags: ['Hardware'],
 			summary: 'Building a heart rate and SpO2 monitor from scratch.',
-			thumbnail: '',
+			thumbnail: '/spo2bpm.jpg',
 			link: '/pages/projects/spo2',
 			date: 'Jan 2023'
 		},
@@ -85,65 +85,65 @@
 		},
 		'Research @ COLLAB': {
 			tags: ['Software', 'Hardware', 'AI/ML', 'Augmentation'],
-			summary: '',
-			thumbnail: '',
-			link: '',
+			summary: 'Action prediction in HRI',
+			thumbnail: '/collab1.jpg',
+			link: '/pages/projects/collab',
 			date: 'Aug 2022'
 		},
-		FeelReal: {
+		"In My Feels": {
 			tags: ['Software', 'AI/ML', 'Augmentation', 'Hackathon'],
 			summary: 'BeReal but for your emotional state in VR',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/inmyfeels.png',
+			link: 'https://devpost.com/software/in-my-feels',
 			date: 'Jan 2023'
 		},
 		TALDERA: {
 			tags: ['Software', 'AI/ML', 'Hackathon'],
 			summary: 'Using the Cohere Generate API to summarize Discord chats',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/taldera.png',
+			link: 'https://lablab.ai/event/cohere-thanksgiving-hackathon/CloseAI%20Deceptacons/TALDERA',
 			date: 'Nov 2022'
 		},
 		'Haptic Glove': {
 			tags: ['Hardware', 'Augmentation'],
 			summary: 'Built my own DIY haptic glove for SteamVR',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/hapticglovecrop.jpg',
+			link: '/pages/projects/hapticglove',
 			date: 'July 2022'
 		},
 		'Haptic Tactics': {
 			tags: ['Software', 'Hardware', 'Augmentation'],
 			summary: 'Using VR and a haptic proxy to improve drilling in aerospace manufacturing.',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/hardtech/hapticdrillcrop.jpg',
+			link: '/pages/projects/haptictactics',
 			date: 'Feb 2022'
 		},
 		'Lowerbody Exoskeleton @ ARL': {
 			tags: ['Software', 'Hardware', 'Augmentation'],
 			summary: 'Predicting ',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/hardtech/arlexocrop.jpg',
+			link: '/pages/projects/exo',
 			date: 'Sept 2021'
 		},
 		QuizzAR: {
 			tags: ['Software', 'Augmentation', 'Hackathon'],
-			summary: '',
-			thumbnail: '',
-			link: '',
+			summary: 'Using a LEAP sensor with a quizlet-type unity game for financial literacy',
+			thumbnail: '/quizar.jpg',
+			link: 'https://devpost.com/software/finance-quizzar',
 			date: 'Oct 2021'
 		},
 		'Coin Detection & Cubes': {
 			tags: ['Software', 'AI/ML', 'Graphics'],
 			summary: 'Some cool fundamental CV and graphics things',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/softtech/cannyedgecoins.png',
+			link: '/pages/projects/cv',
 			date: '2021'
 		},
 		COVILA: {
 			tags: ['Software', 'Hardware', 'AI/ML'],
 			summary: 'Human-tracking autonomous ball launcher',
-			thumbnail: '',
-			link: '',
+			thumbnail: '/hardtech/covilaskate.jpg',
+			link: '/pages/projects/covila',
 			date: '2021'
 		}
 	};
