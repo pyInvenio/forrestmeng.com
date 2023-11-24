@@ -146,7 +146,7 @@
 
 				<img src="/pi2.png" alt="" />
 				Paper:
-				<a href="https://j00ru.vexillium.org/papers/2011/windows_kernel_gs_cookies_subverted.pdf"
+				<a href="https://j00ru.vexillium.org/papers/2011/windows_kernel_gs_cookies_subverted.pdf" class="text-ellipsis break-words"
 					>https://j00ru.vexillium.org/papers/2011/windows_kernel_gs_cookies_subverted.pdf</a
 				>
 				<br /><br />However, in a slightly more recent paper, “Exploiting the otherwise
@@ -203,5 +203,8 @@
 <style type="scss">
 	img {
 		@apply mx-auto max-h-64 my-4;
+	}
+	pre {
+		white-space: pre-wrap;
 	}
 </style>
