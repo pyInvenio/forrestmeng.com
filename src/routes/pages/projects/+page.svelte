@@ -85,9 +85,9 @@
 		},
 		'Research @ COLLAB': {
 			tags: ['Software', 'Hardware', 'AI/ML', 'Augmentation'],
-			summary: 'Action prediction in HRI',
+			summary: 'StROL: Stabilized and Robust Online Learning from Humans (Accepted into IEEE: Robotics and Automation Letters)',
 			thumbnail: '/collab1.jpg',
-			link: '/pages/projects/collab',
+			link: 'https://arxiv.org/pdf/2308.09863.pdf',
 			date: 'Aug 2022'
 		},
 		"In My Feels": {
