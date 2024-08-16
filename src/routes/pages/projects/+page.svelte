@@ -33,13 +33,6 @@
 	};
 
 	let projectMeta = {
-		eqlo: {
-			tags: ['Software', 'Finance'],
-			summary: 'coming soon',
-			thumbnail: '',
-			link: 'https://eqlo.app/',
-			date: 'Oct 2023'
-		},
 		'Semantic Communication - Wireless @ VT': {
 			tags: ['Software', 'AI/ML'],
 			summary: 'coming soon',

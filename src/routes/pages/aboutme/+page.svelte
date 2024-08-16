@@ -28,27 +28,16 @@
 			<div class="flex flex-col lg:ml-0 mx-8 md:text-right lg:w-1/2">
 				<ul>
 					<li class="border-b-[1px] text-lg py-4">
-						Incoming SWE Intern @ Susquehanna International Group
+						startups [stealth]
+						<p class="italic md:text-right">Building some fun things that will help people.</p>
 					</li>
+					<li class="border-b-[1px] text-lg py-4">UTA for CS3214 Operating Systems</li>
 					<li class="border-b-[1px] text-lg py-4">
 						Research @ Wireless at VT
 						<p class="italic md:text-right">
 							Researching novel applications and algorithms in the area of semantic communication
 							and joint source channel coding.
 						</p>
-					</li>
-					<li class="border-b-[1px] text-lg py-4">
-						Director of Operations @ <a href="https://www.sec.vt.edu/" target="_blank"
-							>Student Engineers' Council at Virginia Tech</a
-						>
-						<p class="italic md:text-right">
-							Serving over 10k engineering students with events, $300k+ in philanthropy, and the
-							largest career fair on the east coast (300+ companies, $700k revenue).
-						</p>
-					</li>
-					<li class="border-b-[1px] text-lg py-4">
-						startups [stealth]
-						<p class="italic md:text-right">Building some fun things that will help people.</p>
 					</li>
 					<li class="border-b-[1px] text-lg py-4">Club Admin @ Hokie AI</li>
 					<li class="border-b-[1px] text-lg py-4">Founding Member @ Art Club at VT</li>
@@ -59,6 +48,21 @@
 			<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">Prev</h1></div>
 			<div class="flex flex-col lg:ml-0 mx-8 md:text-right lg:w-1/2">
 				<ul>
+					<li class="border-b-[1px] text-lg py-4">
+						SWE Intern @ Susquehanna International Group
+						<p class="italic md:text-right">
+							Worked on tools and feeds for traders.
+						</p>
+					</li>
+					<li class="border-b-[1px] text-lg py-4">
+						Director of Operations @ <a href="https://www.sec.vt.edu/" target="_blank"
+							>Student Engineers' Council at Virginia Tech</a
+						>
+						<p class="italic md:text-right">
+							Served over 10k engineering students with events, $300k+ in philanthropy, and the
+							largest career fair on the east coast (300+ companies, $700k revenue).
+						</p>
+					</li>
 					<li class="border-b-[1px] text-lg py-4">
 						SWE Intern @ Roblox
 						<p class="italic md:text-right">

@@ -4,8 +4,8 @@
 			<h1 class="text-6xl mb-4">Work</h1>
 			<div class="py-4 border-b-[1px] w-full">
 				<h1 class="text-3xl">Susquehanna International Group</h1>
-				<h1 class="italic text-xl">(Incoming SWE Intern, Summer 2024)</h1>
-				<p>Will be on the MDCAD team.</p>
+				<h1 class="italic text-xl">(SWE Intern, Summer 2024)</h1>
+				<p>On the MDCAD team, built tools for traders using .NET (C#), C++, Svelte.</p>
 			</div>
 			<div class="py-4 border-b-[1px] w-full">
 				<h1 class="text-3xl">Roblox</h1>
