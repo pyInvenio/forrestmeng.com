@@ -11,10 +11,10 @@
 			<div class="flex flex-col  lg:mr-0 mx-8 md:mt-0 mt-8">
 				<h1 class="text-6xl">Hi, I'm Forrest</h1>
 				<p class="text-xl">
-					Currently studying Machine Learning and Controls, Robotics, and Autonomy at Virginia Tech.
+					Studied Machine Learning and Controls, Robotics, and Autonomy at Virginia Tech.
 				</p>
 				<p class="text-xl">
-					Been really interested recently in signals, graphics, semantic communication, and fintech
+					Really interested in signals, graphics, semantic communication, and fintech
 					applications.
 				</p>
 				<p class="text-xl">Working on all things in emerging tech, startups, and art.</p>
@@ -28,19 +28,11 @@
 			<div class="flex flex-col lg:ml-0 mx-8 md:text-right lg:w-1/2">
 				<ul>
 					<li class="border-b-[1px] text-lg py-4">
-						startups [stealth]
-						<p class="italic md:text-right">Building some fun things that will help people.</p>
+						Founding Engineer @ Grand Charter
+						<p class="italic md:text-right">Building some fun things that will help people in the legal space.</p>
 					</li>
 					<li class="border-b-[1px] text-lg py-4">UTA for CS3214 Operating Systems</li>
-					<li class="border-b-[1px] text-lg py-4">
-						Research @ Wireless at VT
-						<p class="italic md:text-right">
-							Researching novel applications and algorithms in the area of semantic communication
-							and joint source channel coding.
-						</p>
-					</li>
-					<li class="border-b-[1px] text-lg py-4">Club Admin @ Hokie AI</li>
-					<li class="border-b-[1px] text-lg py-4">Founding Member @ Art Club at VT</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -48,12 +40,14 @@
 			<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">Prev</h1></div>
 			<div class="flex flex-col lg:ml-0 mx-8 md:text-right lg:w-1/2">
 				<ul>
+					
 					<li class="border-b-[1px] text-lg py-4">
 						SWE Intern @ Susquehanna International Group
 						<p class="italic md:text-right">
 							Worked on tools and feeds for traders.
 						</p>
 					</li>
+					
 					<li class="border-b-[1px] text-lg py-4">
 						Director of Operations @ <a href="https://www.sec.vt.edu/" target="_blank"
 							>Student Engineers' Council at Virginia Tech</a
@@ -69,6 +63,15 @@
 							Built new state APIs for GUIObjects, officially launched features in August 2023.
 						</p>
 					</li>
+					<li class="border-b-[1px] text-lg py-4">
+						Research @ Wireless at VT
+						<p class="italic md:text-right">
+							Researching novel applications and algorithms in the area of semantic communication
+							and joint source channel coding.
+						</p>
+					</li>
+					<li class="border-b-[1px] text-lg py-4">Club Admin @ Hokie AI</li>
+					<li class="border-b-[1px] text-lg py-4">Founding Member @ Art Club at VT</li>
 					<li class="border-b-[1px] text-lg py-4">Neo Scholar Finalist</li>
 					<li class="border-b-[1px] text-lg py-4">Full Stack Contractor @ Tholos</li>
 					<li class="border-b-[1px] text-lg py-4">Undergraduate Research Assistant @ COLLAB</li>
