@@ -1,79 +1,144 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	interface WordEntry {
+		word: string;
+		url: string;
+		placed?: boolean;
+		startRow?: number;
+		startCol?: number;
+		direction?: 'horizontal' | 'vertical';
+	}
+
 	let grid: string[][] = [];
-	let gridOfWords: string[][] = [];
-	let words: string[] = [];
-	words = ['aboutme', 'work', 'projects', 'creations', 'blog', 'contact'];
-	let coordWithLinks: any[] = [];
+	let gridOfWords: string[][][] = []; // Now stores arrays of words for each cell
+	let words: WordEntry[] = [
+		{ word: 'ABOUTME', url: '/pages/aboutme' },
+		{ word: 'WORK', url: '/pages/work' },
+		{ word: 'PROJECTS', url: '/pages/projects' },
+		{ word: 'CREATIONS', url: '/pages/creations' },
+		{ word: 'BLOG', url: '/pages/blog' },
+		{ word: 'CONTACT', url: '/pages/contact' }
+	];
+
 	let highlightedWord: string | null = null;
 	let highlightAllBool: boolean = false;
+
 	onMount(() => {
 		initializeGrid();
 	});
-	function handleMouseOver(word: string) {
-		if (word === '') {
-			return;
-		}
-		if (highlightAllBool) {
-			return;
-		}
-		highlightedWord = word;
-	}
 
-	function handleMouseLeave() {
-		if (highlightAllBool) {
-			return;
-		}
-		highlightedWord = null;
-	}
 	function initializeGrid() {
-		const m = 9;
-		const n = 12;
+		const m = 12;
+		const n = 15;
 
 		grid = Array.from({ length: m }, () => Array(n).fill(''));
-		gridOfWords = Array.from({ length: m }, () => Array(n).fill(''));
-		addWordsToGrid();
-
+		gridOfWords = Array.from({ length: m }, () => Array.from({ length: n }, () => []));
+		
+		placeWordsWithOverlaps();
 		fillRemainingCells();
-		console.log(gridOfWords);
 	}
-	function addWordsToGrid() {
-		grid.forEach((row) => row.fill(''));
 
-		words = shuffle(words);
+	function placeWordsWithOverlaps() {
+		words = shuffle([...words]);
+		
+		// Place first word randomly
+		const firstWord = words[0];
+		const direction = Math.random() < 0.5 ? 'vertical' : 'horizontal';
+		const [row, col] = getRandomStartPosition(firstWord.word.length, direction);
+		placeWord(firstWord.word, row, col, direction);
+		firstWord.placed = true;
+		firstWord.startRow = row;
+		firstWord.startCol = col;
+		firstWord.direction = direction;
 
-		for (const word of words) {
+		// Try to place remaining words with overlaps
+		for (let i = 1; i < words.length; i++) {
+			const word = words[i];
 			let placed = false;
+			let attempts = 0;
+			const maxAttempts = 100;
 
-			while (!placed) {
-				const direction = Math.random() < 0.5 ? 'vertical' : 'horizontal';
-				const [row, col] = getRandomStartPosition(word.length, direction);
-
-				if (canPlaceWord(word, row, col, direction)) {
-					placeWord(word.toUpperCase(), row, col, direction);
-					placed = true;
-					coordWithLinks.push([row, col, direction, word]);
+			while (!placed && attempts < maxAttempts) {
+				// Try to find overlap with already placed words
+				const overlapPosition = findOverlapPosition(word.word);
+				if (overlapPosition) {
+					const { row, col, direction } = overlapPosition;
+					if (canPlaceWordWithOverlap(word.word, row, col, direction)) {
+						placeWord(word.word, row, col, direction);
+						word.placed = true;
+						word.startRow = row;
+						word.startCol = col;
+						word.direction = direction;
+						placed = true;
+					}
 				}
+				
+				// If no overlap found, try random placement
+				if (!placed) {
+					const direction = Math.random() < 0.5 ? 'vertical' : 'horizontal';
+					const [row, col] = getRandomStartPosition(word.word.length, direction);
+					if (canPlaceWordWithOverlap(word.word, row, col, direction)) {
+						placeWord(word.word, row, col, direction);
+						word.placed = true;
+						word.startRow = row;
+						word.startCol = col;
+						word.direction = direction;
+						placed = true;
+					}
+				}
+				attempts++;
 			}
 		}
 	}
 
-	function canPlaceWord(
-		word: string,
-		startRow: number,
-		startCol: number,
-		direction: string
-	): boolean {
+	function findOverlapPosition(newWord: string): { row: number; col: number; direction: 'horizontal' | 'vertical' } | null {
+		const placedWords = words.filter(w => w.placed);
+		
+		for (const placedWord of placedWords) {
+			if (!placedWord.startRow || !placedWord.startCol || !placedWord.direction) continue;
+			
+			// Find common letters
+			for (let i = 0; i < newWord.length; i++) {
+				for (let j = 0; j < placedWord.word.length; j++) {
+					if (newWord[i] === placedWord.word[j]) {
+						// Calculate position for perpendicular placement
+						if (placedWord.direction === 'horizontal') {
+							// Place new word vertically
+							const row = placedWord.startRow - i;
+							const col = placedWord.startCol + j;
+							if (row >= 0 && row + newWord.length <= grid.length) {
+								return { row, col, direction: 'vertical' };
+							}
+						} else {
+							// Place new word horizontally
+							const row = placedWord.startRow + j;
+							const col = placedWord.startCol - i;
+							if (col >= 0 && col + newWord.length <= grid[0].length) {
+								return { row, col, direction: 'horizontal' };
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	function canPlaceWordWithOverlap(word: string, startRow: number, startCol: number, direction: string): boolean {
+		if (startRow < 0 || startCol < 0) return false;
+		
 		for (let i = 0; i < word.length; i++) {
 			const currentRow = direction === 'vertical' ? startRow + i : startRow;
 			const currentCol = direction === 'horizontal' ? startCol + i : startCol;
 
+			if (currentRow >= grid.length || currentCol >= grid[0].length) return false;
+
+			// If cell is not empty, it must match the letter we're trying to place
 			if (grid[currentRow][currentCol] !== '' && grid[currentRow][currentCol] !== word[i]) {
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -81,8 +146,8 @@
 		for (let i = 0; i < word.length; i++) {
 			const currentRow = direction === 'vertical' ? startRow + i : startRow;
 			const currentCol = direction === 'horizontal' ? startCol + i : startCol;
-			gridOfWords[currentRow][currentCol] = word;
-			grid[currentRow][currentCol] += ' ' + word[i];
+			grid[currentRow][currentCol] = word[i];
+			gridOfWords[currentRow][currentCol].push(word);
 		}
 	}
 
@@ -107,44 +172,62 @@
 		return [row, col];
 	}
 
-	function shuffle(array: string[]) {
-		let currentIndex = array.length,
-			randomIndex;
+	function shuffle(array: WordEntry[]) {
+		const newArray = [...array];
+		let currentIndex = newArray.length;
 
 		while (currentIndex !== 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
+			const randomIndex = Math.floor(Math.random() * currentIndex);
 			currentIndex--;
-
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+			
+			const temp = newArray[currentIndex];
+			newArray[currentIndex] = newArray[randomIndex];
+			newArray[randomIndex] = temp;
 		}
 
-		return array;
+		return newArray;
+	}
+
+	function handleMouseOver(rowIndex: number, colIndex: number) {
+		if (highlightAllBool) return;
+		
+		const wordsAtCell = gridOfWords[rowIndex][colIndex];
+		if (wordsAtCell.length === 0) return;
+		
+		// If multiple words, randomly choose one, or use the currently highlighted one if it's in the list
+		if (highlightedWord && wordsAtCell.includes(highlightedWord)) {
+			// Keep current highlighted word if it's still valid for this cell
+			return;
+		}
+		
+		// Randomly select a word from the available words at this cell
+		const randomIndex = Math.floor(Math.random() * wordsAtCell.length);
+		highlightedWord = wordsAtCell[randomIndex];
+	}
+
+	function handleMouseLeave() {
+		if (highlightAllBool) return;
+		highlightedWord = null;
 	}
 
 	function handleClick(rowIndex: number, colIndex: number) {
-		console.log(gridOfWords[rowIndex][colIndex]);
-		if (gridOfWords[rowIndex][colIndex] === 'ABOUTME') {
-			window.location.href = '/pages/aboutme';
-		}
-		if (gridOfWords[rowIndex][colIndex] === 'WORK') {
-			window.location.href = '/pages/work';
-		}
-		if (gridOfWords[rowIndex][colIndex] === 'PROJECTS') {
-			window.location.href = '/pages/projects';
-		}
-		if (gridOfWords[rowIndex][colIndex] === 'CREATIONS') {
-			window.location.href = '/pages/creations';
-		}
-		if (gridOfWords[rowIndex][colIndex] === 'BLOG') {
-			window.location.href = '/pages/blog';
-		}
-		if (gridOfWords[rowIndex][colIndex] === 'CONTACT') {
-			window.location.href = '/pages/contact';
+		const wordsAtCell = gridOfWords[rowIndex][colIndex];
+		if (wordsAtCell.length === 0) return;
+
+		// Use the currently highlighted word if available, otherwise pick the first one
+		const targetWord = highlightedWord && wordsAtCell.includes(highlightedWord) 
+			? highlightedWord 
+			: wordsAtCell[0];
+
+		const wordEntry = words.find(w => w.word === targetWord);
+		if (wordEntry) {
+			window.location.href = wordEntry.url;
 		}
 	}
 
 	function highlightAll() {
 		highlightAllBool = true;
+		highlightedWord = null; // Clear individual word highlighting
 	}
 </script>
 
@@ -157,13 +240,12 @@
 						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<span
-							class="cell transition-all {(gridOfWords[rowIndex][colIndex] === highlightedWord ||
-								(highlightAllBool && gridOfWords[rowIndex][colIndex] != '')) &&
-							highlightedWord !== ''
+							class="cell transition-all {(highlightedWord && gridOfWords[rowIndex][colIndex].includes(highlightedWord)) ||
+								(highlightAllBool && gridOfWords[rowIndex][colIndex].length > 0)
 								? 'highlighted'
 								: ''}"
 							on:click={() => handleClick(rowIndex, colIndex)}
-							on:mouseover={() => handleMouseOver(gridOfWords[rowIndex][colIndex])}
+							on:mouseover={() => handleMouseOver(rowIndex, colIndex)}
 							on:mouseleave={handleMouseLeave}
 						>
 							{cell}
