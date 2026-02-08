@@ -3,16 +3,31 @@
 	import JsonLd from '$lib/components/JsonLd.svelte';
 	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { siteConfig } from '$lib/config';
+	import type { Snippet } from 'svelte';
 
-	export let title = '';
-	export let date = '';
-	export let description = '';
-	export let tags: string[] = [];
-	export let image = '';
-	export let subtitle = '';
-	export let slug = '';
+	interface Props {
+		title?: string;
+		date?: string;
+		description?: string;
+		tags?: string[];
+		image?: string;
+		subtitle?: string;
+		slug?: string;
+		children: Snippet;
+	}
 
-	$: articleSchema = {
+	let {
+		title = '',
+		date = '',
+		description = '',
+		tags = [],
+		image = '',
+		subtitle = '',
+		slug = '',
+		children
+	}: Props = $props();
+
+	const articleSchema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'BlogPosting',
 		headline: title,
@@ -21,7 +36,7 @@
 		author: { '@type': 'Person', name: siteConfig.author },
 		publisher: { '@type': 'Person', name: siteConfig.author },
 		keywords: tags.join(', ')
-	};
+	});
 </script>
 
 <SEO
@@ -44,7 +59,7 @@
 				<h3 class="text-xl italic">{subtitle}</h3>
 			{/if}
 			<div class="prose max-w-none my-4">
-				<slot />
+				{@render children()}
 			</div>
 		</div>
 	</div>

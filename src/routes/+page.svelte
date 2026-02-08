@@ -11,19 +11,19 @@
 		direction?: 'horizontal' | 'vertical';
 	}
 
-	let grid: string[][] = [];
-	let gridOfWords: string[][][] = []; // Now stores arrays of words for each cell
-	let words: WordEntry[] = [
+	let grid: string[][] = $state([]);
+	let gridOfWords: string[][][] = $state([]); // Now stores arrays of words for each cell
+	let words: WordEntry[] = $state([
 		{ word: 'ABOUTME', url: '/pages/aboutme' },
 		{ word: 'WORK', url: '/pages/work' },
 		{ word: 'PROJECTS', url: '/pages/projects' },
 		{ word: 'CREATIONS', url: '/pages/creations' },
 		{ word: 'BLOG', url: '/pages/blog' },
 		{ word: 'CONTACT', url: '/pages/contact' }
-	];
+	]);
 
-	let highlightedWord: string | null = null;
-	let highlightAllBool: boolean = false;
+	let highlightedWord: string | null = $state(null);
+	let highlightAllBool: boolean = $state(false);
 
 	onMount(() => {
 		initializeGrid();
@@ -35,14 +35,14 @@
 
 		grid = Array.from({ length: m }, () => Array(n).fill(''));
 		gridOfWords = Array.from({ length: m }, () => Array.from({ length: n }, () => []));
-		
+
 		placeWordsWithOverlaps();
 		fillRemainingCells();
 	}
 
 	function placeWordsWithOverlaps() {
 		words = shuffle([...words]);
-		
+
 		// Place first word randomly
 		const firstWord = words[0];
 		const direction = Math.random() < 0.5 ? 'vertical' : 'horizontal';
@@ -74,7 +74,7 @@
 						placed = true;
 					}
 				}
-				
+
 				// If no overlap found, try random placement
 				if (!placed) {
 					const direction = Math.random() < 0.5 ? 'vertical' : 'horizontal';
@@ -95,10 +95,10 @@
 
 	function findOverlapPosition(newWord: string): { row: number; col: number; direction: 'horizontal' | 'vertical' } | null {
 		const placedWords = words.filter(w => w.placed);
-		
+
 		for (const placedWord of placedWords) {
 			if (!placedWord.startRow || !placedWord.startCol || !placedWord.direction) continue;
-			
+
 			// Find common letters
 			for (let i = 0; i < newWord.length; i++) {
 				for (let j = 0; j < placedWord.word.length; j++) {
@@ -128,7 +128,7 @@
 
 	function canPlaceWordWithOverlap(word: string, startRow: number, startCol: number, direction: string): boolean {
 		if (startRow < 0 || startCol < 0) return false;
-		
+
 		for (let i = 0; i < word.length; i++) {
 			const currentRow = direction === 'vertical' ? startRow + i : startRow;
 			const currentCol = direction === 'horizontal' ? startCol + i : startCol;
@@ -180,7 +180,7 @@
 		while (currentIndex !== 0) {
 			const randomIndex = Math.floor(Math.random() * currentIndex);
 			currentIndex--;
-			
+
 			const temp = newArray[currentIndex];
 			newArray[currentIndex] = newArray[randomIndex];
 			newArray[randomIndex] = temp;
@@ -191,16 +191,16 @@
 
 	function handleMouseOver(rowIndex: number, colIndex: number) {
 		if (highlightAllBool) return;
-		
+
 		const wordsAtCell = gridOfWords[rowIndex][colIndex];
 		if (wordsAtCell.length === 0) return;
-		
+
 		// If multiple words, randomly choose one, or use the currently highlighted one if it's in the list
 		if (highlightedWord && wordsAtCell.includes(highlightedWord)) {
 			// Keep current highlighted word if it's still valid for this cell
 			return;
 		}
-		
+
 		// Randomly select a word from the available words at this cell
 		const randomIndex = Math.floor(Math.random() * wordsAtCell.length);
 		highlightedWord = wordsAtCell[randomIndex];
@@ -216,8 +216,8 @@
 		if (wordsAtCell.length === 0) return;
 
 		// Use the currently highlighted word if available, otherwise pick the first one
-		const targetWord = highlightedWord && wordsAtCell.includes(highlightedWord) 
-			? highlightedWord 
+		const targetWord = highlightedWord && wordsAtCell.includes(highlightedWord)
+			? highlightedWord
 			: wordsAtCell[0];
 
 		const wordEntry = words.find(w => w.word === targetWord);
@@ -240,16 +240,18 @@
 			{#each grid as row, rowIndex}
 				<div class="row">
 					{#each row as cell, colIndex}
-						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
+						<!-- svelte-ignore a11y_mouse_events_have_key_events -->
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
 						<span
 							class="cell transition-all {(highlightedWord && gridOfWords[rowIndex][colIndex].includes(highlightedWord)) ||
 								(highlightAllBool && gridOfWords[rowIndex][colIndex].length > 0)
 								? 'highlighted'
 								: ''}"
-							on:click={() => handleClick(rowIndex, colIndex)}
-							on:mouseover={() => handleMouseOver(rowIndex, colIndex)}
-							on:mouseleave={handleMouseLeave}
+							onclick={() => handleClick(rowIndex, colIndex)}
+							onmouseover={() => handleMouseOver(rowIndex, colIndex)}
+							onmouseleave={handleMouseLeave}
+							role="button"
+							tabindex="0"
 						>
 							{cell}
 						</span>
@@ -259,7 +261,7 @@
 		</div>
 		<button
 			class="mx-auto mt-4 px-4 border-[#696969] text-[#696969] hover:border-white hover:text-white transition-all border-solid border-2 rounded-lg text-sm md:text-lg text-center "
-			on:click={highlightAll}>s o l v e</button
+			onclick={highlightAll}>s o l v e</button
 		>
 	</div>
 </div>

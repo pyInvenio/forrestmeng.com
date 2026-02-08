@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let schema: Record<string, unknown>;
+	interface Props {
+		schema: Record<string, unknown>;
+	}
+
+	let { schema }: Props = $props();
 </script>
 
 <svelte:head>

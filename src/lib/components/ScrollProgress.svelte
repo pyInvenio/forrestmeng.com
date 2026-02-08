@@ -106,4 +106,4 @@
 	bind:this={canvas}
 	class="fixed top-0 left-0 w-full z-50 pointer-events-none"
 	style="height: {ROWS * CELL}px"
-/>
+></canvas>

@@ -17,7 +17,7 @@
 		'Augmentation',
 		'Hackathon'
 	];
-	let selected: { [key: string]: boolean } = {
+	let selected: { [key: string]: boolean } = $state({
 		Software: false,
 		Hardware: false,
 		Graphics: false,
@@ -25,7 +25,7 @@
 		Finance: false,
 		Augmentation: false,
 		Hackathon: false
-	};
+	});
 	let mobius: HTMLDivElement;
 
 	const addRemoveFromSelected = (className: string) => {
@@ -142,7 +142,7 @@
 		}
 	};
 
-	let filteredProjects: { [key: string]: any }[] = [];
+	let filteredProjects: { [key: string]: any }[] = $state([]);
 
 	function filterProjects() {
 		filteredProjects = Object.entries(projectMeta)
@@ -246,14 +246,14 @@
 		window.addEventListener('resize', onWindowResize, false);
 	});
 
-	$: {
+	$effect(() => {
 		filterProjects();
-	}
+	});
 </script>
 
 <SEO title="Projects" description="Things Forrest Meng has researched, ventured up, and made for fun — software, hardware, graphics, AI/ML, and more." url="/pages/projects" />
 
-<div bind:this={mobius} class="absolute right-0 overflow-hidden top-0 -z-10" />
+<div bind:this={mobius} class="absolute right-0 overflow-hidden top-0 -z-10"></div>
 
 <div class="relative">
 	<div class="relative mx-auto flex w-[min(86rem,95%)] flex-col justify-center my-8 z-10">
@@ -269,7 +269,7 @@
 					class="px-4 py-2 rounded-full border-[1px] transition-all {selected[className]
 						? 'bg-black text-white hover:border-gray-600 mx-2 hover:bg-gray-700 hover:text-white '
 						: 'bg-white text-black hover:border-gray-300 mx-2 hover:bg-gray-100 hover:text-black '}"
-					on:click={() => addRemoveFromSelected(className)}
+					onclick={() => addRemoveFromSelected(className)}
 				>
 					{className}
 				</button>
@@ -277,10 +277,12 @@
 		</div>
 		<div>
 			{#each filteredProjects as project}
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y_click_events_have_key_events -->
 				<div
 					class="bg-white flex flex-col md:flex-row w-full border-[1px] rounded-lg my-4 overflow-hidden opacity-90 hover:opacity-100 hover:drop-shadow-lg hover:border-gray-300 hover:cursor-pointer transition-all"
-					on:click={() => goto(project.link)}
+					onclick={() => goto(project.link)}
+					role="button"
+					tabindex="0"
 				>
 					<div class="flex flex-col md:w-1/3 p-4 justify-between">
 						<h1 class="text-2xl md:mt-4">{project.name}</h1>

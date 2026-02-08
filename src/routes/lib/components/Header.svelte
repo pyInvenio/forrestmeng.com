@@ -1,5 +1,5 @@
 <script>
-	let showMenu = false;
+	let showMenu = $state(false);
 	const toggleMenu = () => {
 		showMenu = !showMenu;
 	};
@@ -9,7 +9,7 @@
 	};
 </script>
 
-<svelte:window on:resize={closeMenu} />
+<svelte:window onresize={closeMenu} />
 <nav
 	class="w-full justify-between flex flex-row text-2xl lg:px-16 px-8 py-4 z-30 bg-white bg-opacity-60"
 >
@@ -27,8 +27,8 @@
 		<button
 			type="button"
 			class="flex text-black hover:text-black focus:outline-none lg:hidden"
-			on:click={toggleMenu}
-			on:keypress={toggleMenu}
+			onclick={toggleMenu}
+			onkeypress={toggleMenu}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -58,12 +58,12 @@
 			: 'pointer-events-none -translate-y-[100%]'}"
 	>
 		<div class="flex lg:hidden flex-col gap-x-2">
-			<p><a href="/pages/aboutme" on:click={toggleMenu}>About Me</a></p>
-			<p><a href="/pages/work" on:click={toggleMenu}>Work</a></p>
-			<p><a href="/pages/projects" on:click={toggleMenu}>Projects</a></p>
-			<p><a href="/pages/creations" on:click={toggleMenu}>Creations</a></p>
-			<p><a href="/pages/blog" on:click={toggleMenu}>Thoughts & Findings</a></p>
-			<p><a href="/pages/contact" on:click={toggleMenu}>Contact</a></p>
+			<p><a href="/pages/aboutme" onclick={toggleMenu}>About Me</a></p>
+			<p><a href="/pages/work" onclick={toggleMenu}>Work</a></p>
+			<p><a href="/pages/projects" onclick={toggleMenu}>Projects</a></p>
+			<p><a href="/pages/creations" onclick={toggleMenu}>Creations</a></p>
+			<p><a href="/pages/blog" onclick={toggleMenu}>Thoughts & Findings</a></p>
+			<p><a href="/pages/contact" onclick={toggleMenu}>Contact</a></p>
 		</div>
 	</div>
 </div>

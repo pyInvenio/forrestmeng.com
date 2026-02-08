@@ -3,21 +3,35 @@
 	import JsonLd from '$lib/components/JsonLd.svelte';
 	import { siteConfig } from '$lib/config';
 	import Icon from '@iconify/svelte';
+	import type { Snippet } from 'svelte';
 
-	export let title = '';
-	export let subtitle = '';
-	export let slug = '';
-	export let description = '';
-	export let image = '';
-	export let links: { label: string; url: string }[] = [];
+	interface Props {
+		title?: string;
+		subtitle?: string;
+		slug?: string;
+		description?: string;
+		image?: string;
+		links?: { label: string; url: string }[];
+		children: Snippet;
+	}
 
-	$: projectSchema = {
+	let {
+		title = '',
+		subtitle = '',
+		slug = '',
+		description = '',
+		image = '',
+		links = [],
+		children
+	}: Props = $props();
+
+	const projectSchema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'CreativeWork',
 		name: title,
 		description: description || subtitle,
 		author: { '@type': 'Person', name: siteConfig.author }
-	};
+	});
 </script>
 
 <svelte:head>
@@ -55,7 +69,7 @@
 				</div>
 			{/if}
 			<div class="prose max-w-none my-4">
-				<slot />
+				{@render children()}
 			</div>
 		</div>
 	</div>

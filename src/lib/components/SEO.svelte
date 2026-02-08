@@ -1,17 +1,29 @@
 <script lang="ts">
 	import { siteConfig } from '$lib/config';
 
-	export let title = '';
-	export let description = siteConfig.description;
-	export let image = siteConfig.image;
-	export let url = '';
-	export let type: 'website' | 'article' = 'website';
-	export let publishedTime = '';
-	export let tags: string[] = [];
+	interface Props {
+		title?: string;
+		description?: string;
+		image?: string;
+		url?: string;
+		type?: 'website' | 'article';
+		publishedTime?: string;
+		tags?: string[];
+	}
 
-	$: fullTitle = title ? `${title} | ${siteConfig.title}` : siteConfig.title;
-	$: canonicalUrl = url ? `${siteConfig.url}${url}` : siteConfig.url;
-	$: imageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;
+	let {
+		title = '',
+		description = siteConfig.description,
+		image = siteConfig.image,
+		url = '',
+		type = 'website',
+		publishedTime = '',
+		tags = []
+	}: Props = $props();
+
+	const fullTitle = $derived(title ? `${title} | ${siteConfig.title}` : siteConfig.title);
+	const canonicalUrl = $derived(url ? `${siteConfig.url}${url}` : siteConfig.url);
+	const imageUrl = $derived(image.startsWith('http') ? image : `${siteConfig.url}${image}`);
 </script>
 
 <svelte:head>

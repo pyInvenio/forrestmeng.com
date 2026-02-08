@@ -5,7 +5,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import type { BlogPost } from '$lib/utils/blog';
 
-	export let data: { posts: BlogPost[] };
+	let { data }: { data: { posts: BlogPost[] } } = $props();
 
 	let classifiers = [
 		'Tech',
@@ -13,19 +13,19 @@
 		'Graphics',
 		'AI/ML'
 	];
-	let selected: { [key: string]: boolean } = {
+	let selected: { [key: string]: boolean } = $state({
 		Tech: false,
 		Art: false,
 		Graphics: false,
 		'AI/ML': false
-	};
+	});
 
 	const addRemoveFromSelected = (className: string) => {
 		selected[className] = !selected[className];
 		filterPosts();
 	};
 
-	let filteredPosts: BlogPost[] = [];
+	let filteredPosts: BlogPost[] = $state([]);
 
 	function filterPosts() {
 		filteredPosts = data.posts.filter((post) => {
@@ -41,9 +41,9 @@
 		filterPosts();
 	});
 
-	$: {
+	$effect(() => {
 		filterPosts();
-	}
+	});
 </script>
 
 <SEO title="Blog" description="Things I've written up about tech, art, and new findings." url="/pages/blog" />
@@ -62,7 +62,7 @@
 					class="px-4 py-2 rounded-full border-[1px] transition-all {selected[className]
 						? 'bg-black text-white hover:border-gray-600 mx-2 hover:bg-gray-700 hover:text-white '
 						: 'bg-white text-black hover:border-gray-300 mx-2 hover:bg-gray-100 hover:text-black '}"
-					on:click={() => addRemoveFromSelected(className)}
+					onclick={() => addRemoveFromSelected(className)}
 				>
 					{className}
 				</button>
@@ -70,10 +70,12 @@
 		</div>
 		<div>
 			{#each filteredPosts as post}
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y_click_events_have_key_events -->
 				<div
 					class="bg-white flex flex-col md:flex-row justify-between w-full py-4 overflow-hidden opacity-90 hover:opacity-100 hover:drop-shadow-lg  hover:cursor-pointer transition-all md:align-middle md:items-center md:border-b-0 border-b-[1px]"
-					on:click={() => goto(post.link)}
+					onclick={() => goto(post.link)}
+					role="button"
+					tabindex="0"
 				>
 					<div class="flex flex-col p-4 justify-between">
 						<h1 class="text-2xl">{post.title}</h1>

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import BlogPost from '$lib/layouts/BlogPost.svelte';
-	export let data: { content: any; meta: Record<string, any> };
+
+	let { data }: { data: { content: any; meta: Record<string, any> } } = $props();
 </script>
 
 <BlogPost {...data.meta}>
-	<svelte:component this={data.content} />
+	<data.content />
 </BlogPost>
