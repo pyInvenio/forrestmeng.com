@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
 	import JsonLd from '$lib/components/JsonLd.svelte';
+	import ScrollProgress from '$lib/components/ScrollProgress.svelte';
 	import { siteConfig } from '$lib/config';
 
 	export let title = '';
@@ -33,6 +34,7 @@
 	{tags}
 />
 <JsonLd schema={articleSchema} />
+<ScrollProgress />
 
 <div class="relative mx-auto flex lg:w-[50%] w-[95%] flex-col justify-center my-8 z-10">
 	<div class="w-full flex flex-col md:flex-row items-center">
