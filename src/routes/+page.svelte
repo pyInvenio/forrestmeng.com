@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
 	import { onMount } from 'svelte';
 
 	interface WordEntry {
@@ -230,6 +231,8 @@
 		highlightedWord = null; // Clear individual word highlighting
 	}
 </script>
+
+<SEO description="Personal website of Forrest Meng — engineer, researcher, and creative working in emerging tech, startups, and art." url="/" />
 
 <div class="h-screen max-h-screen flex justify-center items-center overflow-y-hidden crosswordMain">
 	<div class=" mx-auto my-auto flex flex-col">

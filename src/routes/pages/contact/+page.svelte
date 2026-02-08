@@ -1,6 +1,9 @@
 <script>
 	import Icon from '@iconify/svelte';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
+
+<SEO title="Contact" description="Get in touch with Forrest Meng — email, LinkedIn, GitHub, Twitter, and Calendly." url="/pages/contact" />
 
 <div class="relative mx-auto flex w-[min(86rem,95%)] flex-col justify-center my-8 z-10">
 	<div class="w-full flex flex-col md:flex-row items-center">

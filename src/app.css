@@ -73,3 +73,35 @@ a:hover{
 *::-webkit-scrollbar-corner {
 	background-color: #000000;
 }
+
+/* Prose overrides for mdsvex blog posts */
+.prose h1 {
+	font-family: 'Newsreader', serif;
+}
+.prose h2 {
+	font-family: 'Newsreader', serif;
+}
+.prose h3 {
+	font-family: 'Neuton', serif;
+}
+.prose p,
+.prose li {
+	font-family: 'Red Hat Text', sans-serif;
+}
+.prose img {
+	@apply mx-auto my-4;
+	max-height: 16rem;
+	max-width: 100%;
+	height: auto;
+}
+.prose img.img-sm {
+	@apply md:w-1/5 w-1/2;
+	max-height: none;
+}
+.prose img.img-md {
+	@apply md:w-2/5 w-3/4;
+	max-height: none;
+}
+.prose img.img-lg {
+	max-height: 24rem;
+}

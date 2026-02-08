@@ -1,6 +1,24 @@
 <script>
 	import Icon from '@iconify/svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import JsonLd from '$lib/components/JsonLd.svelte';
 </script>
+
+<SEO title="About Me" description="Forrest Meng — engineer, researcher, and creative. Studied ML and Robotics at Virginia Tech. Currently Founding Engineer at Grand Charter." url="/pages/aboutme" />
+<JsonLd schema={{
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Forrest Meng',
+	url: 'https://forrestmeng.com',
+	jobTitle: 'Founding Engineer',
+	worksFor: { '@type': 'Organization', name: 'Grand Charter' },
+	alumniOf: { '@type': 'CollegeOrUniversity', name: 'Virginia Tech' },
+	sameAs: [
+		'https://www.linkedin.com/in/forrestmeng629/',
+		'https://github.com/pyInvenio',
+		'https://twitter.com/m_forrest'
+	]
+}} />
 
 <div class="relative">
 	<div

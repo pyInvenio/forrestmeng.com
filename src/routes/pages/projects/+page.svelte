@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import * as THREE from 'three';
 	import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
 	import { ParametricGeometries } from 'three/examples/jsm/geometries/ParametricGeometries.js';
@@ -249,6 +250,8 @@
 		filterProjects();
 	}
 </script>
+
+<SEO title="Projects" description="Things Forrest Meng has researched, ventured up, and made for fun — software, hardware, graphics, AI/ML, and more." url="/pages/projects" />
 
 <div bind:this={mobius} class="absolute right-0 overflow-hidden top-0 -z-10" />
 

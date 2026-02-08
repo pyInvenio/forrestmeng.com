@@ -1,3 +1,9 @@
+<script>
+	import SEO from '$lib/components/SEO.svelte';
+</script>
+
+<SEO title="Work" description="Forrest Meng's work experience — Grand Charter, Susquehanna International Group, Roblox, SCOUT Inc." url="/pages/work" />
+
 <div class="relative mx-auto flex w-[min(86rem,95%)] flex-col justify-center my-8 z-10">
 	<div class="w-full flex flex-col md:flex-row items-center">
 		<div class="flex flex-col w-full lg:mr-0 mx-8 md:mt-0 mt-8">
