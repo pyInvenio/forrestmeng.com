@@ -32,8 +32,7 @@
 					Studied Machine Learning and Controls, Robotics, and Autonomy at Virginia Tech.
 				</p>
 				<p class="text-xl">
-					Really interested in signals, graphics, semantic communication, and fintech
-					applications.
+					Really interested in signals, markets, poker, information theory, and finding the meaning behind "value".
 				</p>
 				<p class="text-xl">Working on all things in emerging tech, startups, and art.</p>
 				<h1 class="italic text-2xl pt-2">
@@ -49,7 +48,7 @@
 						Founding Engineer @ Grand Charter
 						<p class="italic md:text-right">Building some fun things that will help people in the legal space.</p>
 					</li>
-					<li class="border-b-[1px] text-lg py-4">UTA for CS3214 Operating Systems</li>
+					<li class="border-b-[1px] text-lg py-4">Movi Collective</li>
 					
 				</ul>
 			</div>
@@ -58,6 +57,7 @@
 			<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">Prev</h1></div>
 			<div class="flex flex-col lg:ml-0 mx-8 md:text-right lg:w-1/2">
 				<ul>
+					<li class="border-b-[1px] text-lg py-4">8VC Fellow</li>
 					
 					<li class="border-b-[1px] text-lg py-4">
 						SWE Intern @ Susquehanna International Group
@@ -65,6 +65,7 @@
 							Worked on tools and feeds for traders.
 						</p>
 					</li>
+					<li class="border-b-[1px] text-lg py-4">UTA for CS3214 Operating Systems</li>
 					
 					<li class="border-b-[1px] text-lg py-4">
 						Director of Operations @ <a href="https://www.sec.vt.edu/" target="_blank"

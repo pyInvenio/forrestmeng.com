@@ -9,6 +9,11 @@
 		<div class="flex flex-col w-full lg:mr-0 mx-8 md:mt-0 mt-8">
 			<h1 class="text-6xl mb-4">Work</h1>
 			<div class="py-4 border-b-[1px] w-full">
+				<h1 class="text-3xl">Lute.gg</h1>
+				<h1 class="italic text-xl">(Engineer, 2025)</h1>
+				<p>Part-time (mostly for fun) Helping to build out crypto trading terminal tools and experiences</p>
+			</div>
+			<div class="py-4 border-b-[1px] w-full">
 				<h1 class="text-3xl">Grand Charter</h1>
 				<h1 class="italic text-xl">(Founding Engineer, Fall 2024)</h1>
 				<p>Building Leginar</p>
