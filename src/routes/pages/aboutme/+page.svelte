@@ -110,8 +110,8 @@
 			<div class="w-full flex flex-col items-top lg:mt-16 mt-8">
 				<div><h1 class="text-4xl py-4 lg:mx-0 mx-8">My reading list:</h1></div>
 				<div class="flex flex-col lg:ml-0 mx-8 lg:max-w-1/2">
-					<li class="text-lg">Beyond Infinite by Michael Lewis [current]</li>
-					<li class="text-lg">Maybe You Should Talk to Someone by Lori Gottlieb [current]</li>
+					<li class="text-lg">Toward an Anthropological Theory of Value by David Graeber [current]</li>
+					<li class="text-lg">The Changing World Order by Ray Dalio [current]</li>
 					<li class="text-lg">Three Body Problem by Liu Cixin</li>
 					<li class="text-lg">Flash Boys by Michael Lewis</li>
 					<li class="text-lg">Snow Crash by Neal Stephenson</li>
