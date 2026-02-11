@@ -32,7 +32,7 @@
 					Studied Machine Learning and Controls, Robotics, and Autonomy at Virginia Tech.
 				</p>
 				<p class="text-xl">
-					Really interested in signals, markets, poker, information theory, and finding the meaning behind "value".
+					Interested in markets, poker, information theory, and researching "value".
 				</p>
 				<p class="text-xl">Working on all things in emerging tech, startups, and art.</p>
 				<h1 class="italic text-2xl pt-2">
