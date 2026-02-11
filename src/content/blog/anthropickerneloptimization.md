@@ -351,8 +351,6 @@ Final result: 1,356 cycles
 
 ---
 
-## Conclusion
-
 This challenge reinforced why kernel optimization requires both systematic thinking and deep problem understanding. The biggest gains came from fundamentals—vectorization, pipelining, and hiding latency—but the final optimizations required careful analysis of resource bottlenecks and dependency graphs.
 
 A few things that worked well: understanding the hardware constraints forced me to think carefully about resource utilization. The perf traces were essential—every gap in VALU utilization pointed to an optimization opportunity. The `multiply_add` transformation was simple math but saved nearly 1,000 cycles, which reminded me that instruction-level optimizations should come before complex scheduling. Moving to DAG-based scheduling was a turning point; it found parallelism I missed and scheduled more consistently. Finally, while Claude helped explore ideas and write boilerplate, it couldn't break through performance walls without guidance—the deep optimizations required understanding *why* something was slow.
