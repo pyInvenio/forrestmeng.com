@@ -13,6 +13,8 @@ Here's how I went from 147,734 cycles down to 1,356 cycles—a 109x speedup.
 
 ![Results](/kernel_perf/result.png)
 
+[Check out my code here](https://github.com/pyInvenio/original_performance_takehome)
+
 ---
 
 ## The Problem
