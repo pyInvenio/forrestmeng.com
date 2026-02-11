@@ -105,3 +105,8 @@ a:hover{
 .prose img.img-lg {
 	max-height: 24rem;
 }
+.prose img.img-full {
+	max-height: none;
+	max-width: 100%;
+	width: 100%;
+}

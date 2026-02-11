@@ -11,7 +11,7 @@ Anthropic recently posted an article on [AI-resistant take-home assignments](htt
 
 Here's how I went from 147,734 cycles down to 1,356 cycles—a 109x speedup.
 
-![Results](/kernel_perf/result.png)
+<img src="/kernel_perf/result.png" alt="Results" class="img-full" />
 
 [Check out my code here](https://github.com/pyInvenio/original_performance_takehome)
 
@@ -118,7 +118,7 @@ Another key change here was offloading some VALU work to ALU. Since ALU has 12 s
 
 Result: ~900 cycles saved from instruction count reduction.
 
-![Phase 2 perf trace](/kernel_perf/phase2.png)
+<img src="/kernel_perf/phase2.png" alt="Phase 2 perf trace" class="img-full" />
 
 ---
 
@@ -159,7 +159,7 @@ The scheduler at this point was primitive—just greedy arrays tracking which op
 
 The perf trace shows better utilization but with visible gaps—these were `vselect` bottlenecks since FLOW only has 1 slot per cycle.
 
-![Phase 3 perf trace](/kernel_perf/phase3.png)
+<img src="/kernel_perf/phase3.png" alt="Phase 3 perf trace" class="img-full" />
 
 Result: ~2.5x speedup from better VALU utilization.
 
@@ -185,7 +185,7 @@ Other optimizations included overlapping address calculations across round bound
 
 In the perf trace, you can see more VALU utilization and interleaved ops. There are periodic bursts which signify the scattered tree node loads (levels 3+), and ALUs firing during address calculation.
 
-![Phase 4 perf trace](/kernel_perf/phase4.png)
+<img src="/kernel_perf/phase4.png" alt="Phase 4 perf trace" class="img-full" />
 
 Result: ~1,000 cycles saved from better interleaving.
 
@@ -210,7 +210,7 @@ This freed up enough scratch space to process all 32 batches in a single group (
 
 With this optimization, VALUs were much better packed as shown in the perf. However, there were still some idle slots, and the tail (final rounds across all batches) was especially poorly optimized. Stores were also completely synchronous—all happening at the very end.
 
-![Phase 5 perf trace](/kernel_perf/phase5.png)
+<img src="/kernel_perf/phase5.png" alt="Phase 5 perf trace" class="img-full" />
 
 Result: ~770 cycles saved from better packing.
 
@@ -275,7 +275,7 @@ priority = (-valu_boost, stage, batch, round, slack, op_id)
 
 The main insight from building the DAG was that some hash computations depended on XOR results rather than the previous hash stage. This exposed parallelism the hand-written scheduler missed. The DAG scheduler filled slots with much higher consistency.
 
-![Phase 6 perf trace](/kernel_perf/phase6.png)
+<img src="/kernel_perf/phase6.png" alt="Phase 6 perf trace" class="img-full" />
 
 Result: ~93 cycles saved from optimal scheduling.
 
@@ -330,7 +330,7 @@ priority = (round, batch, stage, slack)
 
 This packed the tail work more tightly, filling the gaps that were visible in earlier perf traces.
 
-![Phase 7-8 perf trace](/kernel_perf/phase7.png)
+<img src="/kernel_perf/phase7.png" alt="Phase 7-8 perf trace" class="img-full" />
 
 Final result: 1,356 cycles
 
