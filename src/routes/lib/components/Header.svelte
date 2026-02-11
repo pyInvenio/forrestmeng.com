@@ -19,7 +19,7 @@
 		<p><a href="/pages/work">Work</a></p>
 		<p><a href="/pages/projects">Projects</a></p>
 		<p><a href="/pages/creations">Creations</a></p>
-		<p><a href="/pages/blog">Thoughts & Findings</a></p>
+		<p><a href="/pages/blog">Blog</a></p>
 		<p><a href="/pages/contact">Contact</a></p>
 	</div>
 	<div class="lg:hidden flex items-center">
@@ -62,7 +62,7 @@
 			<p><a href="/pages/work" onclick={toggleMenu}>Work</a></p>
 			<p><a href="/pages/projects" onclick={toggleMenu}>Projects</a></p>
 			<p><a href="/pages/creations" onclick={toggleMenu}>Creations</a></p>
-			<p><a href="/pages/blog" onclick={toggleMenu}>Thoughts & Findings</a></p>
+			<p><a href="/pages/blog" onclick={toggleMenu}>Blog</a></p>
 			<p><a href="/pages/contact" onclick={toggleMenu}>Contact</a></p>
 		</div>
 	</div>
