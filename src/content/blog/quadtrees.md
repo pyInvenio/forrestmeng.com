@@ -5,6 +5,7 @@ description: "An overview of quadtrees — graphic's favorite data structure for
 tags: [Tech, Graphics]
 slug: quadtrees
 subtitle: "graphic's favorite datastructure"
+image: "/quad1.jpg"
 ---
 
 When given a large corpus of organizable data, one common data structure we use in databases, programs, and algorithms is the binary tree. A binary tree consists of a parent→child node structure, where each node, starting from the root (topmost node), can be a parent to a maximum of two child nodes. Each node without a child is called a "leaf." One use case of a binary tree is spatial partitioning; starting from the top level node, with the largest range possible for the dataset, a program can traverse downwards, increasing the definition of the dataset each level, until it reaches the leaf nodes.

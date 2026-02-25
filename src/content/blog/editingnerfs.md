@@ -5,6 +5,7 @@ description: "Exploring four techniques for editing Neural Radiance Fields — I
 tags: [Tech, AI/ML, Graphics]
 slug: editingnerfs
 subtitle: "NeRFs can generate 3D views easily; how can we use the architecture to improve the experience?"
+image: "/editnerf1.jpg"
 ---
 
 Neural Radiance Fields is a method of visual rendering, powered by MLPs, that I have been researching for the past few weeks, and have done my own research project on for a graduate machine learning class. Please take a look here for my rundown of the NeRF paper.

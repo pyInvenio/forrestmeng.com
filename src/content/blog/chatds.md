@@ -5,6 +5,7 @@ description: "Another finetuned LLM enters the scene, now for Data Science — a
 tags: [Tech, AI/ML]
 slug: chatds
 subtitle: "Another finetuned LLM enters the scene, now for Data Science"
+image: "/chatds1.jpg"
 ---
 
 For the past few days, I have been reading a lot about LLMs, their structure, how transformers vastly improved LLMs' memory bank, and the arguments about LLM understanding and alignment. While working on my notes about the Induction Heads today, I tuned in to a webinar hosted by Dr. Provost and Dr. Sedoc, interviewing ChatDS, an LLM-powered chatbot for Data Science, and thought I'd write about the conversation and some takeaways.

@@ -5,6 +5,7 @@ description: "A proof of concept on DLT-backed over the air update transactions 
 tags: [Tech]
 slug: latis
 subtitle: "A proof of concept on DLT-backed over the air update transactions for securing the modern Industry 4.0 IoT update workflow."
+image: "/hardtech/latissystemdiagram.png"
 ---
 
 Manufacturers, supply chain managers, and infrastructure centers generally want several things:

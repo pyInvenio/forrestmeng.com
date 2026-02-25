@@ -5,6 +5,7 @@ description: "Microsoft's cookie made of pi — exploring buffer overflow attack
 tags: [Tech]
 slug: microsoftpi
 subtitle: "microsoft's cookie made of pi"
+image: "/pi1.png"
 ---
 
 ![](/pi1.png)

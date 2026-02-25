@@ -5,6 +5,7 @@ description: "The influence of Degas and Impressionism on art interpretation and
 tags: [Art]
 slug: impressionism
 subtitle: "The influence of Degas and Impressionism on art interpretation and modern expression."
+image: "/impress1.jpg"
 ---
 
 ![](/impress1.jpg)

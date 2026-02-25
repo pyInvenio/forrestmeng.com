@@ -11,13 +11,15 @@
 		'Tech',
 		'Art',
 		'Graphics',
-		'AI/ML'
+		'AI/ML',
+		'Essay'
 	];
 	let selected: { [key: string]: boolean } = $state({
 		Tech: false,
 		Art: false,
 		Graphics: false,
-		'AI/ML': false
+		'AI/ML': false,
+		Essay: false
 	});
 
 	const addRemoveFromSelected = (className: string) => {

@@ -5,6 +5,7 @@ description: "First week of looking into rabbit holes of interesting areas of ar
 tags: [Tech, Graphics]
 slug: inverserendering
 subtitle: "First week of looking into rabbit holes of interesting areas of art, tech, and ML."
+image: "/invred1.jpg"
 ---
 
 As I'm building Artscaper, I'm realizing that automating proper image labels is a crucial aspect of the process. One possible research avenue is to determine the light sources and parameters of an image, which is an idea that emerged from my years of photography experience. For studio and artistic portraits, lighting is often a signature element for many photographers. As a candid photographer, I learned to use the lighting in a scene, but setting up lighting to mimic artists like Brandon Woefel and Limon Fan was a challenge.

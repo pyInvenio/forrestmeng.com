@@ -5,6 +5,7 @@ description: "Going from 147,734 cycles down to 1,356 cycles on Anthropic's VLIW
 tags: [Tech, AI/ML]
 slug: anthropickerneloptimization
 subtitle: "109x speedup on a VLIW SIMD kernel"
+image: "/kernel_perf/result.png"
 ---
 
 Anthropic recently posted an article on [AI-resistant take-home assignments](https://www.anthropic.com/engineering/AI-resistant-technical-evaluations) and open-sourced their [original performance take-home](https://github.com/anthropics/original_performance_takehome) problem, along with benchmarked cycle counts for Sonnet and Opus 4.5 solving it autonomously. With only some university knowledge about kernel optimization, I aimed to beat the models myself.

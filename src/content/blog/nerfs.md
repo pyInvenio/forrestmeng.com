@@ -5,6 +5,7 @@ description: "Going over the Neural Radiance Fields paper and how this developme
 tags: [Tech, AI/ML, Graphics]
 slug: nerfs
 subtitle: "Going over the Neural Radiance Fields paper and how this development is revolutionary to 3D graphics"
+image: "/nerf1.jpg"
 ---
 
 Project page (Mildenhall et al): [https://www.matthewtancik.com/nerf](https://www.matthewtancik.com/nerf)

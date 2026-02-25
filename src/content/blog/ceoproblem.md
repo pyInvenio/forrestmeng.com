@@ -5,6 +5,7 @@ description: "CEO's have a hard time listening to everyone; how could they find 
 tags: [Tech, AI/ML]
 slug: ceoproblem
 subtitle: "CEO's have a hard time listening to everyone; how could they find minimal distortion from the input from multiple agents?"
+image: "/ceoproblem.jpg"
 ---
 
 ![](/ceoproblem.jpg)
