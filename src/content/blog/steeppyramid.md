@@ -1,14 +1,12 @@
 ---
 title: "The Steep Pyramid Is Not the Failure State"
 date: "Feb 23, 2026"
-description: "Factor price equalization, not demand collapse — how AI reprices cognitive labor, steepens the pyramid, and where the MEV lives."
+description: "Factor price equalization, not demand collapse"
 tags: [Tech, AI/ML, Essay]
 slug: steeppyramid
-subtitle: "Factor price equalization, not demand collapse"
+subtitle: ""
 image: "/canary.jpg"
 ---
-
-# The Steep Pyramid Is Not the Failure State
 
 A friend texts me after reading the [Citrini](https://www.citriniresearch.com/p/2028gic?source=queue) piece. Two years out of school, early in finance. “*By the time I'm a partner, I'll run the associate work on AI.”*
 
