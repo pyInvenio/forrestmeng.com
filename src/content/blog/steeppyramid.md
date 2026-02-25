@@ -30,7 +30,7 @@ The standard rebuttal is Schumpeter: creative destructioon creates industries we
 
 The Hayek rebuttal is that the cost of capital rises and kills the buildout; however, capex is shifting from labor to hard assets and raw commodities, and inference costs have dropped over 280x in the past two years. The bottleneck currently priced by the market are energy and silicon, both of which are on deflationary trajectories. Neither rebuttal addresses how aggregate demand can stabilize while the professional middle class experiences genuine immiseration. Macro stability and individual catastrophe are compatible outcomes. 
 
-### The Floor Rises
+## The Floor Rises
 
 Citrini treats this slope as a rupture; “smut for crypto bros” is how a mutual described the AI doomer essays. Crypto culture and retail investing trained an entire generation to expect spiked short termed volatility and that everything could go to zero; a compelling fiction.
 
@@ -38,7 +38,7 @@ The floor is rising and everything is shipping faster. Anthropic constantly cuts
 
 The optimist calls this democratization. That's true and mostly irrelevant. Democratizing intelligence compresses the rent of everyone currently monetizing its scarcity: the $800/hour lawyer, the research team, the mid-level analyst. The floor rising is adversarial to whoever owns the cognitive premium. When the baseline resets upward, the threshold for what justifies human employment resets with it.
 
-### The Pyramid Steepens
+## The Pyramid Steepens
 
 The correct analogue is Korea post 1997.
 
@@ -50,13 +50,13 @@ We see the same shape tracking in corporate data. Salesforce revenue is up over 
 
 This is where the slope lives. Labor's share of GDP ran at 64 percent in 1974 and 56 percent today. Citrini projects 46 percent by end of decade. At $31.5 trillion in US GDP, the difference between 56 and 46 percent is roughly $3.15 trillion annually rerouting from labor to capital. The mechanism now becomes position.
 
-### Positioning
+## Positioning
 
 I am long on institutions most well positioned to capture AI surplus; brand, data, distribution, regulations, and deal making are the structure behind most of these companies’ worth. Claude is a capability multiplier of existing advantage. S&P Global does not die. The analyst who writes credit reports does. Salesforce does not die. The Salesforce admin is getting replaced by an AI agent. Moat taxonomy matters here. Workflow moats are the weakest (Asana, Zapier, Monday.com). Network moats are much more durable. Regulatory and exclusivity moats might be the strongest (NRSRO, government relationships etc). The interesting corollary: large institutions with failed experiments get a second look. Google's Stadia failed because the infrastructure wasn't there, not because the vision was wrong. When capability compounds every four months, optionality on shelved projects is underpriced.
 
 The capital question is more direct; salary is the most commoditizable form of compensation and reprices the moment the market of the underlying skill reprices. Equity in institutions capturing AI surplus reprices upward as the cost of intelligence flattens. The transition from employee to principal, from directing labor to owning the capital that directs AI, is the only durable position. The distribution of who can make that transition is itself a steepening pyramid.
 
-### Moats are Ledges
+## Moats are Ledges
 
 Every cognitive moat cited as protection against the bear scenario is already automated or on the roadmap with a visible end.
 
@@ -75,7 +75,7 @@ The one exception is accountability surface: the human node that legal and socia
 
 What makes this more than regulatory lag: as AI systems get more capable, the consequences of deploying them incorrectly get larger. A wrong AI medical diagnosis at scale carries more liability than a wrong human diagnosis at scale. Humans occupying accountability nodes in heavily regulated verticals who use that position to write the institutional playbook for how AI operates within those verticals are capturing something durable. This is a Worldcoin bull case: proof of personhood becomes infrastructure when you need to know which human is attached to which AI action before you can hold anyone accountable. Everything else is just runway.
 
-### The Elevated Pyramid is the Structure
+## The Elevated Pyramid is the Structure
 
 The steep pyramid is not the failure state of this transition. It is the load-bearing structure through which the productivity gains get allocated and the buildout accelerates. The debate about redistribution assumes the prior wage structure is recoverable; once the floor has moved, it isn’t.
 
