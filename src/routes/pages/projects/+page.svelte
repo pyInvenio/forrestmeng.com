@@ -34,6 +34,13 @@
 	};
 
 	let projectMeta = {
+		'Rule 110 Compiler': {
+			tags: ['Software'],
+			summary: 'A compiler that turns Turing machines into Rule 110 cellular automaton tapes, then simulates 338 million cells through 3 billion generations to compute 10 + 21 = 31.',
+			thumbnail: '/rule110/head_combined.png',
+			link: '/pages/blog/rule110',
+			date: 'Mar 2026'
+		},
 		'Semantic Communication - Wireless @ VT': {
 			tags: ['Software', 'AI/ML'],
 			summary: 'coming soon',
