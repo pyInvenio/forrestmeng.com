@@ -43,6 +43,10 @@
 	"type": "module",
 	"dependencies": {
 		"@vercel/analytics": "^1",
+		"katex": "^0.16.33",
+		"rehype-katex": "^7.0.1",
+		"rehype-katex-svelte": "^1.2.0",
+		"remark-math": "^3.0.0",
 		"three": "^0.150.1"
 	}
 }
