@@ -32,7 +32,7 @@ If you start Rule 110 from a random row of cells and watch what happens, at firs
 
 *Gliders emerging from our compiled Rule 110 output. Periodic structures propagate through the ether background at fixed velocities.*
 
-Ether is a lattice of white triangles with spatial period 14 and temporal period 7 (shifting 24 cells every 30 generations). Any localized disturbance in the ether propagates as a **glider**: a persistent, periodic structure that moves at a fixed velocity against the ether background.
+Ether is a lattice of white triangles with spatial period 14 and temporal period 7 (shifting 24 cells per generation). Any localized disturbance in the ether propagates as a **glider**: a persistent, periodic structure that moves at a fixed velocity against the ether background.
 
 <img src="/rule110/catelog.png" alt="All known gliders of Rule 110 from Cook's paper" class="img-full" />
 
@@ -113,7 +113,9 @@ One CTS step works like this: a leader arrives from the right and reads the firs
 
 The pipeline implements these reductions concretely:
 
-$$\text{Turing Machine} \to \text{Tag System} \to \text{Cyclic Tag System} \to \text{Glider System} \to \text{Rule 110}$$
+$$\text{Turing Machine} \to \text{Tag System} \to \text{Cyclic Tag System}$$
+
+$$\to \text{Glider System} \to \text{Rule 110}$$
 
 <img src="/rule110/pipeline.png" alt="Pipeline overview" class="img-full" />
 
@@ -129,7 +131,9 @@ $$\text{Turing Machine} \to \text{Tag System} \to \text{Cyclic Tag System} \to \
 
 For a TM with $m$ states and $t$ tape symbols, Cook's encoding uses deletion number $s = t + 2$ and an alphabet of $4m + 3ms$ symbols organized into seven families:
 
-$$\Phi = \underbrace{H_{\psi_i}}_m \cup \underbrace{L_{\psi_i}}_m \cup \underbrace{R_{\psi_i}}_m \cup \underbrace{R^*_{\psi_i}}_m \cup \underbrace{H_{\psi_i,\sigma_j}}_{ms} \cup \underbrace{L_{\psi_i,\sigma_j}}_{ms} \cup \underbrace{R_{\psi_i,\sigma_j}}_{ms}$$
+$$\Phi = \underbrace{H_{\psi_i}}_m \cup \underbrace{L_{\psi_i}}_m \cup \underbrace{R_{\psi_i}}_m \cup \underbrace{R^*_{\psi_i}}_m$$
+
+$$\cup\ \underbrace{H_{\psi_i,\sigma_j}}_{ms} \cup \underbrace{L_{\psi_i,\sigma_j}}_{ms} \cup \underbrace{R_{\psi_i,\sigma_j}}_{ms}$$
 
 The $H$, $L$, $R$ families encode the TM head, left tape, and right tape respectively. The subscript $\psi_i$ indexes TM states; $\sigma_j$ indexes tape symbols. The first four families are "state-only" symbols that expand into symbol-specific variants during execution:
 
@@ -138,13 +142,18 @@ $$H_{\psi_i} \to H_{\psi_i,\sigma_0}\ H_{\psi_i,\sigma_1}\ \cdots\ H_{\psi_i,\si
 The symbol-specific productions encode TM transitions. For $\delta(i, j) = (G, Y, \text{LEFT})$:
 
 $$H_{\psi_i,\sigma_j} \to (R^*_G)^{s(s-Y)}\ (H_G)^{j+1}$$
-$$L_{\psi_i,\sigma_j} \to L_G \qquad R_{\psi_i,\sigma_j} \to (R_G)^{s^2}$$
+
+$$L_{\psi_i,\sigma_j} \to L_G$$
+
+$$R_{\psi_i,\sigma_j} \to (R_G)^{s^2}$$
 
 Halt transitions produce empty strings, eventually shrinking the word below the deletion threshold.
 
 The initial word is encoded exponentially. For a tape $\ldots\ b_x \ldots b_1\ [c]\ d_1 \ldots d_y\ \ldots$ with the head on symbol $c$ in state $\gamma$:
 
-$$w_0 = (H_\gamma)^{1+s-c}\ (L_\gamma)^{s^{x+1} + \sum_{k=1}^{x}(s-b_k)\cdot s^k}\ (R_\gamma)^{\sum_{k=1}^{y}(s-d_k)\cdot s^k}$$
+$$w_0 = (H_\gamma)^{1+s-c}\ (L_\gamma)^{s^{x+1} + \sum_{k=1}^{x}(s-b_k)\cdot s^k}$$
+
+$$\cdot\ (R_\gamma)^{\sum_{k=1}^{y}(s-d_k)\cdot s^k}$$
 
 Tape contents go into the *exponents* using a base-$s$ positional system. For our addition TM ($m=2$, $t=5$, so $s=7$):
 
@@ -246,11 +255,11 @@ The HashLife tree grows to ~40M nodes and advances through 2.9B generations in ~
 
 ### Settling Detection
 
-The computation is done when the tape has settled into pure ether. I detect this by comparing the tape at generation $g$ with the tape at generation $g - 720$, offset by 720 cells:
+The computation is done when the tape has settled into pure ether. Every 30 generations, I compare the tape at generation $g$ with the tape at generation $g - 30$, offset by $30 \times 24 = 720$ cells to account for ether drift:
 
-$$\text{mismatch}(g) = \sum_{i} \mathbb{1}\left[\text{cell}(g, i) \neq \text{cell}(g-720, i-720)\right]$$
+$$\text{mismatch}(g) = \sum_{i} \mathbb{1}\left[\text{cell}(g, i) \neq \text{cell}(g-30, i-720)\right]$$
 
-Why 720? Ether shifts 24 cells per generation with temporal period 30. After 720 generations ($= 24 \times 30$), the ether completes its full spatiotemporal cycle. When the mismatch drops below 300, the tape has settled.
+Ether shifts 24 cells per generation. After 7 generations ($= 1$ temporal period), it shifts $168 = 12 \times 14$ cells — exactly 12 spatial periods — so the pattern returns to its original appearance. The 30-generation sampling interval is a convenient multiple that aligns with the block phase system. When the mismatch drops below 300, the tape has settled.
 
 ### Active Width Tracking
 
