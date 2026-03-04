@@ -248,8 +248,10 @@ Every `(left, right)` pair maps to a unique `Node*` via a hash table, so identic
 
 $$\text{step\_by}(\text{node}, n) = \begin{cases}
 \text{step}(\text{node}) & \text{if } n = 2^{k-2} \\
-\text{join}(\text{step\_by}(\text{left half}, n), \text{step\_by}(\text{right half}, n)) & \text{otherwise}
+\text{join}(L', R') & \text{otherwise}
 \end{cases}$$
+
+where $L' = \text{step\_by}(\text{left half}, n)$ and $R' = \text{step\_by}(\text{right half}, n)$.
 
 The HashLife tree grows to ~40M nodes and advances through 2.9B generations in ~2,262 seconds - an 18,000x speedup over direct simulation.
 
