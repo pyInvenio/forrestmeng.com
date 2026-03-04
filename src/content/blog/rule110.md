@@ -179,7 +179,11 @@ The CTS tape and appendants are spatially encoded into a Rule 110 initial condit
 
 The initial tape has three regions:
 
-$$\underbrace{A^v\ B\ A^{13}\ B\ A^{11}\ B\ A^{12}\ B}_{\text{left periodic (ossifiers)}} \quad \underbrace{C\ [E|F]\ D\ [E|F]\ D\ \cdots\ [E|F]\ G}_{\text{central (tape data)}} \quad \underbrace{[KHIIJ \cdots | L]\ \cdots\ K}_{\text{right periodic (appendants)}}$$
+$$\underbrace{A^v\ B\ A^{13}\ B\ A^{11}\ B\ A^{12}\ B}_{\text{left periodic (ossifiers)}}$$
+
+$$\underbrace{C\ [E|F]\ D\ [E|F]\ D\ \cdots\ [E|F]\ G}_{\text{central (tape data)}}$$
+
+$$\underbrace{[KHIIJ \cdots | L]\ \cdots\ K}_{\text{right periodic (appendants)}}$$
 
 **Central part:** Block C marks the origin. E/F blocks encode CTS tape bits (N/Y), separated by D blocks. This is the stationary $C_2$ tape data from the glider system. G terminates the tape.
 
