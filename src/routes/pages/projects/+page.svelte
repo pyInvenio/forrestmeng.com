@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -284,12 +283,11 @@
 		</div>
 		<div>
 			{#each filteredProjects as project}
-				<!-- svelte-ignore a11y_click_events_have_key_events -->
-				<div
-					class="bg-white flex flex-col md:flex-row w-full border-[1px] rounded-lg my-4 overflow-hidden opacity-90 hover:opacity-100 hover:drop-shadow-lg hover:border-gray-300 hover:cursor-pointer transition-all"
-					onclick={() => goto(project.link)}
-					role="button"
-					tabindex="0"
+				<a
+					href={project.link}
+					target={project.link.startsWith('http') ? '_blank' : undefined}
+					rel={project.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+					class="bg-white flex flex-col md:flex-row w-full border-[1px] rounded-lg my-4 overflow-hidden opacity-90 hover:opacity-100 hover:drop-shadow-lg hover:border-gray-300 hover:cursor-pointer transition-all no-underline text-inherit"
 				>
 					<div class="flex flex-col md:w-1/3 p-4 justify-between">
 						<h1 class="text-2xl md:mt-4">{project.name}</h1>
@@ -309,7 +307,7 @@
 							loading="lazy"
 						/>
 					</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>
