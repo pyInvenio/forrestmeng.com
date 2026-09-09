@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title description">
+  <title id="title">Atomic Settlement on Tempo</title>
+  <desc id="description">Asset and payment legs exchanging atomically through one settlement instruction.</desc>
+  <rect width="1200" height="480" fill="#111111"/>
+  <g fill="none" stroke="#f5f1e8" stroke-width="4">
+    <rect x="70" y="90" width="250" height="300" rx="24"/>
+    <rect x="880" y="90" width="250" height="300" rx="24"/>
+    <rect x="438" y="145" width="324" height="190" rx="95" stroke="#c8ff63"/>
+    <path d="M320 175h158m-35-27 35 27-35 27"/>
+    <path d="M880 305H722m35-27-35 27 35 27"/>
+  </g>
+  <g fill="#f5f1e8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">
+    <text x="195" y="210" font-size="34">ASSET</text>
+    <text x="195" y="258" font-size="20" fill="#a7a39b">SELLER</text>
+    <text x="1005" y="210" font-size="34">PAYMENT</text>
+    <text x="1005" y="258" font-size="20" fill="#a7a39b">BUYER</text>
+    <text x="600" y="226" font-size="27" fill="#c8ff63">ATOMIC</text>
+    <text x="600" y="265" font-size="27" fill="#c8ff63">SETTLEMENT</text>
+    <text x="600" y="435" font-size="22" letter-spacing="5">TEMPO DvP / RvP</text>
+  </g>
+</svg>

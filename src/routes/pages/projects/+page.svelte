@@ -33,6 +33,14 @@
 	};
 
 	let projectMeta = {
+		'Atomic Settlement on Tempo': {
+			tags: ['Software', 'Finance'],
+			summary:
+				'A universal DvP/RvP settlement engine with signed instructions, modular asset adapters, and no prefunded escrow.',
+			thumbnail: '/tempo-dvp.svg',
+			link: '/pages/blog/tempo-dvp',
+			date: 'Sep 2026'
+		},
 		'Rule 110 Compiler': {
 			tags: ['Software'],
 			summary: 'A compiler that turns Turing machines into Rule 110 cellular automaton tapes, then simulates 338 million cells through 3 billion generations to compute 10 + 21 = 31.',
