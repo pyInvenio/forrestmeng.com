@@ -286,8 +286,6 @@ The implementation is checked at four levels:
 3. Stateful invariants — settlement states only move forward, IDs stay used, token conservation holds, and the contracts retain no intended custody or optimized-path allowance.
 4. Cross-language vectors — Solidity and Rust independently reproduce the same type hashes, authorization digests, signatures, and content digests.
 
-`./scripts/check.sh` currently reports 128 passing Solidity tests. The CI profile runs each invariant suite for 256 runs of 64 calls and the universal round-trip fuzz test for 10,000 inputs. Rust passes 32 unit tests and three integration/vector tests.
-
 The important negative tests are the ones where payment executes first and delivery then fails. Moving the seller’s asset, supplying the wrong NFT ID, missing a custodian approval, exceeding an FX bound, or presenting a forged buyer signature must leave both parties exactly where they started.
 
 Fee-on-transfer and rebasing tokens are outside the canonical adapter assumptions. Cross-chain assets cannot share one EVM transaction and require a separate finality and compensation protocol. The implementation is experimental and unaudited.
